@@ -11,7 +11,24 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	
+<!--Date -->	
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 	<script>
+		<!--calender-->
+		  $( function() {	
+		  $( "#datepicker" ).datepicker();
+		   } );	  
+			  
+		  $( "#datepicker" ).datepicker({dateFormat:"yy/mm/dd"}).datepicker("setDate",new Date());
+		
+		
+	
 		function showChoice() {
 			$.get( "recipelist.html", 
 				  function(recipeData) {
@@ -21,9 +38,9 @@
 						    .dialog({
     						    height: 500,
         						width: 600,
-        						title: 'Title'});
+        						title: ''});
 				  		$dialog.dialog('open');
-						$dialog.html('Some text' + recipeData );
+						$dialog.html('Food List' + recipeData );
 			}, 'html');
 		}
 	</script>
@@ -145,28 +162,39 @@ myTable.rows[0].cells[1].innerHTML = 'Hello';-->
             	<div class="demo-content"><h3 class="text-center">Dinner</h3></div>
 			</div>
         </div>
+			
         <hr>
 			
 			<div class="row">
             <div class="col-md-3">
-                <div class="demo-content" onclick="showChoice()">Display system date and day option for calender 10/09/2017</div>
-            </div>
-            <div class="col-md-3">
-            	<div class="demo-content" onclick="showChoice()">click for a pop up menu Cereal</div>
-					<div class="col-md-4">
-					<div class="text">Count</div>
-						<label for="query">Search
-          				<input type="text" name="query" id="query" size="38" value="" />
-       					 </label>
-					</div>	
-            </div>
-            <div class="col-md-3">
-            	<div class="demo-content" onclick="showChoice()">Rice</div>
-            </div>
-			<div class="col-md-3">
-            	<div class="demo-content" onclick="showChoice()">Roti</div>
+                <div class="demo-content" onclick="function()"><input type="text" size="12" id="datepicker">   
+				</div>
 			</div>
-        </div>
+				
+            <div class="col-md-3">
+            	<div class="demo-content" onclick="showChoice()">Cereal
+						<div class="text">Count
+						<input type="text" name="query" id="query" size="4" value="1" />
+				   </div>
+				</div>
+			</div>
+				
+            <div class="col-md-3">
+            	<div class="demo-content" onclick="showChoice()">Rice
+					<div class="text">Count
+						<input type="text" name="query" id="query" size="4" value="1" />
+					</div>
+				</div>
+			</div>
+            
+			<div class="col-md-3">
+            	<div class="demo-content" onclick="showChoice()">Roti
+					<div class="text">Count
+						<input type="text" name="query" id="query" size="4" value="1" />
+					</div>
+				</div>
+			</div>
+		</div>
         <hr>
 		
 				<!--table class = "table table-striped">
