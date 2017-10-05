@@ -3,7 +3,7 @@
 <html lang="en">
 	
 <head>
-	<title>Menu planner using Boot strap</title>
+	<title>Menu History using Boot strap</title>
 	<meta char-set="utf-8">
 	<meta name="viewport" content="width-device-width,initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
@@ -22,19 +22,15 @@
 </head>
 <body>
 	
-	<div class="container">
-			<h1 class="text-center">Menu you chose before</h1> 
+	
+	
+	
+		<div class="container">
+			<h1 class="text-center">My Menu history</h1> 
 		</div>
 	
-	<div class="row">
-		<div class="alert alert-info" style="min-height:100px;">
-			<div class="col-xs-9">
-           </div>
-			
-		
-<div class="container">
-	<div class="row">
-        <div class="col-md-3">
+	
+		 <div class="col-md-3">
             <form action="#" method="get">
                 <div class="input-group">
                     <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
@@ -45,7 +41,17 @@
                 </div>
             </form>
         </div>
-		
+
+       
+   		<label for="field"> Sort By
+            <select name="menu">
+				<option>Date</option>
+            </select>
+        </label>
+   
+	
+	<br><br><br>
+	<br><br><br>
 
 		<div class="col-md-9">
     	 <table class="table table-list-search">
@@ -53,10 +59,6 @@
                         <tr>
                             <th>Menu Name</th>
                             <th>Created on</th>
-                            <th>A</th>
-                            <th>Entry</th>
-                            <th>Entry</th>
-                            <th>Entry</th>
                         </tr>
                     </thead>
                     <tbody>
