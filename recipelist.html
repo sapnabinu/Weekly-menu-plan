@@ -1,11 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+	<title>Menu planner using Boot strap</title>
+	<meta char-set="utf-8">
+	<meta name="viewport" content="width-device-width,initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script>
+		
+		function choice() {
+			$.get( "http://allrecipes.com/recipe/9295/red-velvet-cake/", 
+				  function(recipeData) {
+						var SplitText = "Title"
+						var $dialog = $('<div style="background-color:green"></div>')
+    						.html(SplitText )
+						    .dialog({
+    						    height: 500,
+        						width: 600,
+        						title: ''});
+				  		$dialog.dialog('open');
+						$dialog.html('Food List' + recipeData );
+			}, 'html');
+	</script>	
+	
+	
+</head>
+	
+	<body>
+		
+
 <form action="">
 	
 	
-	<div class="container">
-	<h4 class="text">Red velvet cake [4]</h4>
-    <h4 class="text">Stack cake</h4>
-    <h4 class="text">Strawberry shortcake [5]</h4>
-    <h4 class="text">Tipsy cake</h4>
+	
+		<h4><a class="text" onclick="choice()">Red velvet cake</a></h4>
+		  	
+			
+		
+		
+		<h4><a class = "text" href = "https://cooking.nytimes.com/recipes/1016329-red-velvet-cake">Stack cake</a></h4>
+		<h4><a class = "demo-content" href = "https://cooking.nytimes.com/recipes/1016329-red-velvet-cake">Strawberry shortcake</a></h4>
+		
 	<h4 class="text">American fried rice</h4>
     <h4 class="text">Calas</h4>
     <h4 class="text">Charleston red rice</h4>
