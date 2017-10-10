@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
@@ -7,10 +8,10 @@
 <link href="/font/fontello.css" media="screen" rel="stylesheet" />
 <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/cneicdnjajpaepkkgimoainnbhoannfj">
 <meta charset="utf-8">
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"fc311df502","applicationID":"13672209","transactionName":"clpaQERfCg5dQxYUVVJcRFFFHxUKV0Y=","queueTime":1,"applicationTime":69,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"fc311df502","applicationID":"13672209","transactionName":"clpaQERfCg5dQxYUVVJcRFFFHxUKV0Y=","queueTime":1,"applicationTime":82,"agent":""}</script>
 <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Meal Planning</title>
+<title>Plan to Eat - Simple Meal Planning</title>
 <meta name="description" content="">
 <meta name="robots" content="NOODP">
 <meta name="verify-v1" content="gy51+n7Z3R/Nv8CpQPt8JtL/MB70qY4hk/7y3e5pAlg=">
@@ -19,13 +20,13 @@
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 <link rel="image_src" href="https://pte.s3.amazonaws.com/a/plantoeat-meal-planner-and-grocery-list-maker.jpg">
 <meta property="og:image:secure_url" content="https://pte.s3.amazonaws.com/a/plantoeat-meal-planner-and-grocery-list-maker.jpg" />
-<meta property="og:url" content="https://www.plantoeat.com/recipes/12538975/" />
+<meta property="og:url" content="https://www.plantoeat.com/recipes/12540557/" />
 <meta property="og:title" content="Plan to Eat - Simple Meal Planning" />
 <meta property="og:description" content="" />
 <meta property="fb:app_id" content="113046216472" />
 <meta property="fb:admins" content="1052785816" />
 <script>var production = true, mobile = false, userContext = {"id":290594,"login":"sapnageorge","email":"sapna.g.binu@gmail.com","status":"Trial","plan":null,"total_payments":0,"mobile_request":false};</script>
-<link rel="canonical" href="https://www.plantoeat.com/recipes/12538975/" />
+<link rel="canonical" href="https://www.plantoeat.com/recipes/12540557/" />
 <link href="https://assets.plantoeat.com/assets/app-pte-27ab627fb26ed9eea0fd84bc8630ae4d6956b626439cf8da1f52a7e4b65e17a3.css" media="all" rel="stylesheet" />
 <!--[if lte IE 7 ]><link href="https://assets.plantoeat.com/stylesheets/ie7.css" media="all" rel="stylesheet" /><![endif]-->
 <!--[if IE]><link href="https://assets.plantoeat.com/stylesheets/ie.css" media="all" rel="stylesheet" /><![endif]-->
@@ -37,26 +38,26 @@
 <div id="page">
 <div id="header">
 <div class="header-wrap">
-<a class="pte-logo hide-mobile" href="/"><img alt="My meal menu" height="48" src="https://assets.plantoeat.com/assets/v3/app-logo-hd-shadow-62f058dc319d7550fc3aacc941a228d545c4bec70d33d3e3864c36704397e8e9.png" width="180" /></a>
-<a class="pte-logo show-mobile" href="/"><img alt="Plan to Eat" height="38" src="https://assets.plantoeat.com/assets/v3/app-logo-hd-shadow-square-75913777b59cdee1e2246bda1a850e6333c1596302c7936205c29c6f64cbf1a6.png" width="50" /></a>
+<!--a class="pte-logo hide-mobile" href="/"><img alt="Plan to Eat" height="48" src="https://assets.plantoeat.com/assets/v3/app-logo-hd-shadow-62f058dc319d7550fc3aacc941a228d545c4bec70d33d3e3864c36704397e8e9.png" width="180" /></a>
+<a class="pte-logo show-mobile" href="/"><img alt="Plan to Eat" height="38" src="https://assets.plantoeat.com/assets/v3/app-logo-hd-shadow-square-75913777b59cdee1e2246bda1a850e6333c1596302c7936205c29c6f64cbf1a6.png" width="50" /></a-->
 <div class="menu menu-main">
-<a href="/recipes" class="recipes"><i class="icon-food"></i> <span>Cook</span></a><a href="/planner" class="planner"><i class="icon-calendar-1"></i> <span>Plan</span></a><a href="/shopping_lists" class="shopping"><i class="icon-basket"></i> <span>Shop</span></a><a class="view-mobile-site hide-important" href="https://m.plantoeat.com/recipes/12538975?mobile_site=1"><i class="icon-right-bold"></i><i class="icon-mobile"></i></a>
+<a href="/recipes" class="recipes"><i class="icon-food"></i> <span>Cook</span></a><a href="/planner" class="planner"><i class="icon-calendar-1"></i> <span>Plan</span></a><a href="/shopping_lists" class="shopping"><i class="icon-basket"></i> <span>Shop</span></a><a class="view-mobile-site hide-important" href="https://m.plantoeat.com/recipes/12540557?mobile_site=1"><i class="icon-right-bold"></i><i class="icon-mobile"></i></a>
 </div>
-<div class="menu menu-util">
+<!--div class="menu menu-util">
 <a class="my-account" href="/profile" title="View My Account Information"><i>sapnageorge</i> My Account</a><a href="https://help.plantoeat.com/" class="help" target="_blank"><i class='icon icon-help'></i> <span>Help</span></a>
+</div-->
 </div>
-</div>
-<div class="clearfix"></div><div class="current_notice monthly-promotion">
+<!--div class="clearfix"></div><div class="current_notice monthly-promotion">
 <a class="close_notice" data-method="delete" data-remote="true" href="/notices/24" rel="nofollow" title="Hide Notice"><i class="icon-cancel-1"></i></a>
 <div class="notice_content"><a href="/welcome_from/one-pot"><img alt="One Pot October" src="/images/affiliates/one-pot-october-heading-banner.png" width="186" height="45"></a> <a href="/welcome_from/one-pot" class="larger">One month. Simple meals. One Pot.</a> <a href="/welcome_from/one-pot" class="button">Join the Fun!</a></div>
-</div>
+</div-->
 </div>
 <i class="icon-cancel-circled close-recipe-modal"></i>
 <div id="body">
 <div class="wrap content">
 <table id="recipes_table" class="recipes_table">
 <tr>
-<td class="recipe-book-menu"><div class="left-menu">
+<!--td class="recipe-book-menu"><div class="left-menu">
 <a class="my-recipes" href="/recipes">
 <i class="icon-book"></i>
 <cite>My Recipes</cite>
@@ -69,30 +70,30 @@
 <i class="icon-check"></i>
 <cite>Queue <span>(0)</span></cite>
 </a></div>
-</td>
+</td-->
 <td style="background-color:#E5E4D6;">
-<div class="pte-recipe hrecipe wide owner show-all" data-recipe-id="12538975" data-event-id="" data-new-recipe="true" tabindex="0">
+<div class="pte-recipe hrecipe wide owner show-all" data-recipe-id="12540557" data-event-id="" data-new-recipe="true" tabindex="0">
 <div class="edit-header"><div class="padding">
 <button type="button" class="cancel blue close-modal">Cancel</button> <button type="submit" class="positive"><i class="icon-floppy"></i> Save <span>Changes</span></button>
 <h1>New Recipe</h1>
 </div></div>
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="recipe_photo">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show recipe_photo" data-recipe-id="12538975" data-partial-section="recipe_photo">
+<div class="show-edit-section show recipe_photo" data-recipe-id="12540557" data-partial-section="recipe_photo">
 <div class="photo-box">
 <div class="left-menu show">
-<a title="Cooking View" href="/recipes/12538975/cook" class="openCookingView" data-recipe-id="12538975" data-recipe-servings=""><i class="icon-food"></i> <cite>Cooking View</cite></a>
-<a title="Print" href="/recipes/12538975/print" class="recipe-print" target="_blank"> <i class="icon-print"></i> <cite>PRINT</cite></a>
-<a title="Plan" href="/planner/create?rid=12538975" class="planit"><i class="icon-clock"></i> <cite>Plan</cite></a>
+<a title="Cooking View" href="/recipes/12540557/cook" class="openCookingView" data-recipe-id="12540557" data-recipe-servings=""><i class="icon-food"></i> <cite>Cooking View</cite></a>
+<a title="Print" href="/recipes/12540557/print" class="recipe-print" target="_blank"> <i class="icon-print"></i> <cite>PRINT</cite></a>
+<a title="Plan" href="/planner/create?rid=12540557" class="planit"><i class="icon-clock"></i> <cite>Plan</cite></a>
 <span class="spacer"></span>
-<a class="queueit " data-recipe-method="queue" data-remote="true" href="/queue_toggle/12538975" title="queue">
+<a class="queueit " data-recipe-method="queue" data-remote="true" href="/queue_toggle/12540557" title="queue">
 <i class="icon-check"></i> <cite><span class="on">Queued</span><span class="off">Add to Queue</span></cite>
-</a> <a class="privateit " data-recipe-method="private" data-remote="true" href="/recipes/private_toggle/12538975" title="Toggle Privacy"><i class="icon-lock-open"></i> <cite><span class="off">Make</span> Private</cite></a>
+</a> <a class="privateit " data-recipe-method="private" data-remote="true" href="/recipes/private_toggle/12540557" title="Toggle Privacy"><i class="icon-lock-open"></i> <cite><span class="off">Make</span> Private</cite></a>
 <div class="spacer"></div>
-<a title="Edit" href="/recipes/edit/12538975" class="edit"><i class="icon-pencil"></i> <cite>Edit Recipe</cite></a>
-<a title="Duplicate" href="/recipes/duplicate/12538975" class="edit_and_duplicate"><i class="icon-popup"></i> <cite>Duplicate</cite></a>
-<a title="Restore Recipe" href="/recipes/destroy/12538975?remove=0" class="delete positive">
+<a title="Edit" href="/recipes/edit/12540557" class="edit"><i class="icon-pencil"></i> <cite>Edit Recipe</cite></a>
+<a title="Duplicate" href="/recipes/duplicate/12540557" class="edit_and_duplicate"><i class="icon-popup"></i> <cite>Duplicate</cite></a>
+<a title="Restore Recipe" href="/recipes/destroy/12540557?remove=0" class="delete positive">
 <span class="on"><i class="icon-ccw"></i> <cite>Restore Recipe</cite></span>
 <span class="off"><i class="icon-trash"></i> <cite>Delete Recipe</cite></span>
 </a>
@@ -101,15 +102,15 @@
 <a title="Import from Web" href="#" class="recipe_import_url"><i class="icon-globe"></i> <cite>Import from Web</cite></a>
 <a title="Bulk Input" href="#" class="recipe_bulk_input"><i class="icon-keyboard"></i> <cite>Bulk Input</cite></a>
 <span class="spacer"></span>
-<a class="privateit " data-recipe-method="private" data-remote="true" href="/recipes/private_toggle/12538975" title="Toggle Privacy"><i class="icon-lock-open"></i> <cite><span class="off">Make</span> Private</cite></a>
-<a title="Delete Recipe" href="/recipes/destroy/12538975?remove=1" class="delete"><i class="icon-trash"></i> <cite>Delete Recipe</cite></a>
+<a class="privateit " data-recipe-method="private" data-remote="true" href="/recipes/private_toggle/12540557" title="Toggle Privacy"><i class="icon-lock-open"></i> <cite><span class="off">Make</span> Private</cite></a>
+<a title="Delete Recipe" href="/recipes/destroy/12540557?remove=1" class="delete"><i class="icon-trash"></i> <cite>Delete Recipe</cite></a>
 </div>
 <div class="recipe-photo">
 <div class="recipe-photo"></div>
 <div class="recipe-photo-bottom-shadow"></div>
-<a href='#' class="button add_change_photo" data-controller_name="recipes" data-id="12538975"><i class="icon-camera"></i> Add Photo</a>
+<a href='#' class="button add_change_photo" data-controller_name="recipes" data-id="12540557"><i class="icon-camera"></i> Add Photo</a>
 <div class="recipe-photo-bottom">
-<span class="rating on" data-id="12538975" data-rating="0"><em class="icon-block"></em><i>&#9734;</i><i>&#9734;</i><i>&#9734;</i><i>&#9734;</i><i>&#9734;</i></span>
+<span class="rating on" data-id="12540557" data-rating="0"><em class="icon-block"></em><i>&#9734;</i><i>&#9734;</i><i>&#9734;</i><i>&#9734;</i><i>&#9734;</i></span>
 <div class="tags source">
 </div>
 </div>
@@ -117,10 +118,10 @@
 </div></div>
 </form>
 <div class="left-wide title-times-desc">
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="title">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show title" data-recipe-id="12538975" data-partial-section="title"> <h4 class="missing">Title</h4>
+<div class="show-edit-section show title" data-recipe-id="12540557" data-partial-section="title"> <h4 class="missing">Title</h4>
 <h1 class="title fn" itemprop="name"></h1>
 <div class="show-edit-buttons">
 <a class="change spinner"><i class="icon-arrows-ccw animate-spin"></i></a>
@@ -134,10 +135,10 @@
 </div>
 </div>
 </form>
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="times">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show times" data-recipe-id="12538975" data-partial-section="times"><table class="columns times">
+<div class="show-edit-section show times" data-recipe-id="12540557" data-partial-section="times"><table class="columns times">
 <tr>
 <td><h5 class="missing">Prep Time</h5>
 </td>
@@ -158,10 +159,10 @@
 </div>
 </div></div>
 </form>
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="description">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show description" data-recipe-id="12538975" data-partial-section="description"><h5 class="missing">Description</h5>
+<div class="show-edit-section show description" data-recipe-id="12540557" data-partial-section="description"><h5 class="missing">Description</h5>
 <div class="summary" itemprop="description"><p></p></div>
 <div class="show-edit-buttons">
 <a class="change spinner"><i class="icon-arrows-ccw animate-spin"></i></a>
@@ -180,10 +181,10 @@
 <div class="recipe-content">
 <div class="hor-section">
 <div class="left-wide">
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="ingredients">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show ingredients" data-recipe-id="12538975" data-partial-section="ingredients"><h4 class="missing">Ingredients</h4>
+<div class="show-edit-section show ingredients" data-recipe-id="12540557" data-partial-section="ingredients"><h4 class="missing">Ingredients</h4>
 <div class="tabs">
 <h5 class="tab original-ingredients ">Original <span>Ingredients</span> <i>= Serves 1</i></h5>
 <h5 class="tab scaled-ingredients  selected">Scaled <span>Ingredients</span> <i>= Serves 1</i></h5>
@@ -212,10 +213,10 @@
 </form>
 </div>
 <div class="right-wide dir-wrap">
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="directions">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show directions" data-recipe-id="12538975" data-partial-section="directions"><div class="directions simple-menu">
+<div class="show-edit-section show directions" data-recipe-id="12540557" data-partial-section="directions"><div class="directions simple-menu">
 <div class="menu-nav">
 <h4 style="vertical-align:middle;" class="missing">Directions
 </h4>
@@ -233,10 +234,10 @@
 </div>
 </div>
 </form>
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="prep_notes">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show prep_notes" data-recipe-id="12538975" data-partial-section="prep_notes"> <div class="prep_notes">
+<div class="show-edit-section show prep_notes" data-recipe-id="12540557" data-partial-section="prep_notes"> <div class="prep_notes">
 <h4 class="missing">Prep Notes</h4>
 </div>
 <div class="show-edit-buttons">
@@ -256,10 +257,10 @@
 </div>
 <div class="hor-section">
 <div class="left-wide">
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="categories">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show categories" data-recipe-id="12538975" data-partial-section="categories"> <table class="columns categories">
+<div class="show-edit-section show categories" data-recipe-id="12540557" data-partial-section="categories"> <table class="columns categories">
 <tr>
 <td><h5 class="missing">Course</h5>
 <a class="category" data-filter-name="courses" href="/recipes#filter/courses="></a>
@@ -286,10 +287,10 @@
 </form>
 </div>
 <div class="right-wide">
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="recipe_tags">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show recipe_tags" data-recipe-id="12538975" data-partial-section="recipe_tags"><input type="hidden" name="recipe[tags_input]" value="" id="recipe_tags_input" class="tags"></input>
+<div class="show-edit-section show recipe_tags" data-recipe-id="12540557" data-partial-section="recipe_tags"><input type="hidden" name="recipe[tags_input]" value="" id="recipe_tags_input" class="tags"></input>
 <h5 class="missing">Tags</h5>
 <p class="add_tags larger">
 </p>
@@ -311,10 +312,10 @@
 </div>
 <div class="hor-section">
 <div class="left-wide">
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="nutrition">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show nutrition" data-recipe-id="12538975" data-partial-section="nutrition"><div class="nutrition">
+<div class="show-edit-section show nutrition" data-recipe-id="12540557" data-partial-section="nutrition"><div class="nutrition">
 <h4 class="missing">Nutritional Facts</h4>
 <div class="show-edit-buttons">
 <a class="change spinner"><i class="icon-arrows-ccw animate-spin"></i></a>
@@ -328,10 +329,10 @@
 </div>
 </div></div>
 </form>
-<form action="/recipes/update/12538975" method="post" class="ajax" data-callback="return_show_edit_form">
+<form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
 <input type="hidden" name="partial_section" value="share">
 <input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show share" data-recipe-id="12538975" data-partial-section="share"><div class="share-private-notice disabled">
+<div class="show-edit-section show share" data-recipe-id="12540557" data-partial-section="share"><div class="share-private-notice disabled">
 <h4 class="left">Share</h4>
 <p>Sharing is disabled because this recipe is private.</p>
 </div>
@@ -340,16 +341,16 @@
 <a class="share-recipe-html">
 <i class="icon-rss"> </i> Share on Blog
 </a>
-<a class="email-recipe" target="_blank" href="mailto:?subject=&amp;body=https%3A%2F%2Fwww.plantoeat.com%2Frecipes%2F12538975">
+<a class="email-recipe" target="_blank" href="mailto:?subject=&amp;body=https%3A%2F%2Fwww.plantoeat.com%2Frecipes%2F12540557">
 <i class="icon-mail"></i> Email
 </a>
-<a class="pinit popup" target="_blank" href="//www.pinterest.com/pin/create/button/?url=https://www.plantoeat.com/recipes/12538975&amp;media=&amp;description=" data-height="550" data-width="750">
+<a class="pinit popup" target="_blank" href="//www.pinterest.com/pin/create/button/?url=https://www.plantoeat.com/recipes/12540557&amp;media=&amp;description=" data-height="550" data-width="750">
 <i class="icon-pinterest"></i> Pin It
 </a>
-<a class="facebook-share popup" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.plantoeat.com/recipes/12538975" data-height="300" data-width="400">
+<a class="facebook-share popup" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.plantoeat.com/recipes/12540557" data-height="300" data-width="400">
 <i class="icon-facebook"></i> Share
 </a>
-<a class="tweet popup" target="_blank" href="https://twitter.com/intent/tweet?url=https://www.plantoeat.com/recipes/12538975&amp;text=&amp;via=PlanToEat" data-height="500" data-width="500">
+<a class="tweet popup" target="_blank" href="https://twitter.com/intent/tweet?url=https://www.plantoeat.com/recipes/12540557&amp;text=&amp;via=PlanToEat" data-height="500" data-width="500">
 <i class="icon-twitter"></i> Tweet
 </a>
 </div>
@@ -362,7 +363,7 @@
 <h4>Comments &amp; Personal Notes</h4>
 <form action="/comments" method="post" class="add-comment ajax" data-content-action="before">
 <textarea name="comment" rows="4" style="width:98%;"></textarea>
-<input type="hidden" name="recipe_id" value="12538975" class="recipe_id">
+<input type="hidden" name="recipe_id" value="12540557" class="recipe_id">
 <p><button type="submit">Add Comment</button> </p>
 </form>
 </div>

@@ -18,6 +18,20 @@
         text-align: center;
         background: #dbdfe5;
     }
+	
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #FAEBD7;
+      padding: 25px;
+    }
+
+		
 	</style>
 </head>
 <body>
@@ -29,6 +43,17 @@
 			<h1 class="text-center">My Menu history</h1> 
 		</div>
 	
+	
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/home/sapna/keystone/Weekly-menu-plan/boot1.html"><span style="color:white;">Home</a>
+		  </div></div></nav>
 	
 		 <div class="col-md-3">
             <form action="#" method="get">
@@ -44,8 +69,9 @@
 
        
    		<label for="field"> Sort By
-            <select name="menu">
+            <select name="">
 				<option>Date</option>
+				<option>Menu name</option>
             </select>
         </label>
    
