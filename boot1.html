@@ -1,262 +1,259 @@
-
 <!DOCTYPE html>
 <html lang="en">
 	
 <head>
-	<title>Menu planner using Boot strap</title>
-	<meta char-set="utf-8">
-	<meta name="viewport" content="width-device-width,initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	
-<!--Date -->	
+  <title>Menu planner using Boot strap</title>
+  <meta char-set="utf-8">
+  <meta name="viewport" content="width-device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="plan.js"></script>
+
+  <!--Date -->	
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="plan.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-	<script>
-		<!--calender-->
-		  $( function() {	
-		  $( "#datepicker" ).datepicker();
-		   },'html');	  
-			  
-		  $( "#datepicker" ).datepicker({dateFormat:"yy/mm/dd"}).datepicker("setDate",new Date());
-		
-		
-	
-		function showChoice() {
-			$.get( "recipelist.html", 
-				  function(recipeData) {
-						var SplitText = "Title"
-						var $dialog = $('<div style="background-color:green"></div>')
-    						.html(SplitText )
-						    .dialog({
-    						    height: 500,
-        						width: 600,
-        						title: ''});
-				  		$dialog.dialog('open');
-						$dialog.html('Food List' + recipeData );
-			}, 'html');
-		}
-	</script>
-	<style type="text/css">
-    p{
-        padding: 10px;
-        font-size: 32px;
-        font-weight: bold;
-        text-align: center;
-        background: #dbdfe5;
-    }
-		  .demo-content{
-        padding: 20px;
-        font-size: 15px;
-        min-height: 100px;
-        background: #dbdfe5;
-		text-align: center;	  
-        margin-bottom: 10px;
-    }
-    .demo-content.bg-alt{
-        background: #abb1b8;
-    }
-		
-	</style>
+  <script>
+    var srcdiv;
+    <!--calender-->
+    $( function() {
+    $( "#datepicker" ).datepicker();
+    } );
+  </script>
 </head>
 
-	<body>
-		
-		<div class="container">
-			<h1 class="text-center">My Menu Planner</h1> 
-		</div>
-  
-   	<div class="container-fluid">
-		<div class="row">
-			
-			<!--class="col-sm"-->
-				<div class = "dropdown">
-		  <button type = "button" class = "btn btn-primary dropdown-toggle" data-toggle = "dropdown">
-			 More Options
-			 <span class = "caret"></span>
-		  </button>	  
-			 <ul class = "dropdown-menu">
-			 <li><a href="/home/sapna/keystone/Weekly-menu-plan/plan for me(1).html">Easy meal plan</a></li>
-				<!--li><a href="projects/index.html">Save plan</a></li-->
-				
-			 <li><a href="/home/sapna/keystone/Weekly-menu-plan/menuhistory.html">Your presaved menu</a></li>
-			  <li><a href="/home/sapna/keystone/Weekly-menu-plan/recipe.html">Recipe Organizer</a></li>
-			  <li class="divider"></li>
-			  	 <li><a href="/home/sapna/keystone/Weekly-menu-plan/sharee.html">Share Receipes with Friends</a></li>
-				 <li><a href="/home/sapna/keystone/Weekly-menu-plan/reminder.html">Set up Reminder</a></li>
-			</ul>
-			
-		
-		
-		
-			<!--div class="col-sm"-->
-		
-	  		<select>  
-			<option value="Type of Meal">Type of Meal</option>
-			<option value="Low calorie">Low calorie</option>
-			<option value="Kids meal">Kids meal</option>
-			<option value="Vegan">Vegan</option>
-			</select>
-			</div>		
-		
-				
-			
-		
-			<div class="row">
-		<div class="alert alert-info" style="min-height:100px;">
-			<div class="col-xs-9"></div>
-						
-		   <div class="col-xs-3">
-       			<a class = "btn btn-primary btn-lg" href = "/home/sapna/keystone/Weekly-menu-plan/olduser_signin.html" role = "button">Sign in</a></div>
-		 </div>
-			</div>
-			
-			
-		<!--div class="col-sm"-->	
-			
-		 <div class = "dropdown">
-		 
-		  <button type = "button" class = "btn btn-primary dropdown-toggle" data-toggle = "dropdown">
-			 Menu Info
-			 <span class = "caret"></span>
-		  </button>	  
-			 <ul class = "dropdown-menu col-xs-3">
-			 <li><a href="projects/index.html">View Calories</a></li>
-			 <li><a href="projects/index.html">View Nutritional facts</a></li>
-			 <li><a href="projects/index.html">Cost</a></li>
-			 <li><a href="projects/index.html">Time to prepare</a></li>
-			 </ul>
-			 
-		</div> 
-		</div>	
-		</div>
-		
-		
-		<div>
-			<h3>Select your Menu</h3>
-		</div>
-		
-		
-		<!--var myTable = document.getElementById('myTable');
-myTable.rows[0].cells[1].innerHTML = 'Hello';-->
-		
-		
-		<div class="container">
-		
-        <!--Row with three equal columns-->
-        <div class="row">
-            <div class="col-md-3">
-                <div class="demo-content"><h3 class="text-center">Date</h3></div>
-            </div>
-            <div class="col-md-3">
-				<div class="demo-content"><h3 class="text-center">Breakfast</h3></div>
-            </div>
-            <div class="col-md-3">
-            	<div class="demo-content"><h3 class="text-center">Lunch</h3></div>
-            </div>
-			<div class="col-md-3">
-            	<div class="demo-content"><h3 class="text-center">Dinner</h3></div>
-			</div>
-        </div>
-			
-        <hr>
-			
-			<div class="row">
-            <div class="col-md-3">
-                <div class="demo-content" onclick="function()"><input type="text" size="12" id="datepicker">   
-				</div>
-			</div>
-				
-            <div class="col-md-3">
-            	<div class="demo-content" onclick="showChoice()">Cereal
-						<div class="text">Count
-						<input type="text" name="query" id="query" size="4" value="1" />
-				   </div>
-				</div>
-			</div>
-				
-            <div class="col-md-3">
-            	<div class="demo-content" onclick="showChoice()">Rice
-					<div class="text">Count
-						<input type="text" name="query" id="query" size="4" value="1" />
-					</div>
-				</div>
-			</div>
-				
-				
-				
-            
-			<div class="col-md-3">
-            	<div class="demo-content" onclick="showChoice()">Roti
-					<div class="text">Count
-						<input type="text" name="query" id="query" size="4" value="1" />
-					</div>
-				</div>
-			</div>
-		</div>
-        <hr>
-		
-			
-			<div><a class = "btn btn-primary btn" onClick=""> Add Day</a></div>
-			
-				<!--table class = "table table-striped">
-				 <thead>
-				  <tr>
-					<th>Day</th>
-					<th>Breakfast</th>
-					<th>Lunch</th>
-					<th>Dinner</th>
-				  </tr>
-				 </thead>
+<body>
 
-					<tbody>	 
-					  <tr>
-						<td>01/06/17 Monday</td>
-						<td>Bon bon chicken</td>
-						<td>Butter chicken</td>
-						<td>Bean sprouts chicken</td>
-					  </tr>
-					  <tr>
-						<td>Tuesday</td>
-						<td>Brown stew chicken</td>
-						<td>Buldak</td>
-						<td>Buldak</td>
-					  </tr>
-					  <tr>
-						<td>Wednesday</td>
-						<td>Beggar's Chicken</td>
-						<td>Bubur ayam</td>
-						<td>Bubur ayam</td>
-					  </tr>
-					  </tbody>	
-				</table-->
+  <div class="container">
 
-			<div class="container-fluid">
-		<div class="row">
-			<p>
-			<a class = "btn btn-info" href = "https://www.amazon.com/AmazonFresh" role = "button">Online shopping</a>&nbsp &nbsp	
-			<a class = "btn btn-info" href = "https://www.google.com/maps/search/grocery+shops" role = "button">Local stores near you</a>&nbsp &nbsp
-			<a class = "btn btn-info" href = "https://www.google.com/maps/search/gym" role = "button">Local gym near you</a>&nbsp &nbsp
-			</p>
-		</div>
-			</div>
-		
-		
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-6">
+	<h1 class="text-center">Weekly Menu Planner</h1>
+      </div>
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-1">
+	<a class="btn btn-primary btn-lg" href="olduser_signin.html" role="button">Sign in</a>
+      </div>
+    </div>
+
+    <div id="recipedialog"></div>
+    <div class="row" style="background-color:lightgray;">&nbsp;</div>
+    <div class="row" style="background-color:lightgray;">
+
+    <div class="col-md-3"> <!-- more options column -->
+	<div class="dropdown">
+	  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+	    More Options
+	    <span class = "caret"></span>
+	  </button>
+
+	  <ul class = "dropdown-menu">
+	    <li><a href="plan for me(1).html">Easy meal plan</a></li>
+	    <li><a href="menuhistory.html">Your presaved menu</a></li>
+	    <li><a href="recipe.html">Recipe Organizer</a></li>
+	    <li class="divider"></li>
+	    <li><a href="sharee.html">Share Receipes with Friends</a></li>
+	    <li><a href="reminder.html">Set up Reminder</a></li>
+	  </ul>
+	</div>
+      </div> <!-- end more options column -->
+      
+      <div class="col-md-3">
+	<select>  
+	  <option value="Type of Meal">Type of Meal</option>
+	  <option value="Low calorie">Low calorie</option>
+	  <option value="Kids meal">Kids meal</option>
+	  <option value="Vegan">Vegan</option>
+	</select>
+      </div>
+      	
+      <div class="col-md-3">
+	<label>Count:</label>
+	<input type="text" name="query" id="query" size="4" value="1" />
+      </div>
+
+      <div class="col-md-3">
+	<div class = "dropdown">
+	  <button type = "button" class = "btn btn-primary dropdown-toggle" data-toggle = "dropdown">
+	    Menu Info
+	    <span class = "caret"></span>
+	  </button>	  
+	  <ul class = "dropdown-menu col-xs-3">
+	    <li><a href="projects/index.html">View Calories</a></li>
+	    <li><a href="projects/index.html">View Nutritional facts</a></li>
+	    <li><a href="projects/index.html">Cost</a></li>
+	    <li><a href="projects/index.html">Time to prepare</a></li>
+	  </ul>
+	</div> 
+      </div> <!-- end menu info -->
+    </div> <!-- end top menu bar -->
+
+    <div class="row" style="background-color:lightgray;">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+
+    <div style="background-color:#f5f5f5">
+      
+<!-- meal plan table -->
+    <div class="row">
+      <div class="col-md-3">
+	<p class="demo-content">Start Date<input type="text" id="datepicker"></p>
+      </div>
+      <div class="col-md-3">
+	<div class="demo-content"><h3 class="text-center">Breakfast</h3></div>
+      </div>
+      <div class="col-md-3">
+        <div class="demo-content"><h3 class="text-center">Lunch</h3></div>
+      </div>
+      <div class="col-md-3">
+        <div class="demo-content"><h3 class="text-center">Dinner</h3></div>
+      </div>
+    </div>
+    
+      <div class="row">
+        <div class="col-md-3">
+	</div>
 	
- 			 <div class="btn-group btn-group-justified">
-				<a class = "btn btn-primary btn-lg" href = "/home/sapna/keystone/Weekly-menu-plan/grosslist.html" role = "button">Save my menu</a> 
-				<a class = "btn btn-primary btn-lg" href = "/home/sapna/keystone/Weekly-menu-plan/grosslist.html" role = "button">Generate List</a>
-				<a class = "btn btn-primary btn-lg" href = "/home/sapna/keystone/Weekly-menu-plan/grosslist.html" role = "button">Print my Menu plan</a>
-				<a class = "btn btn-primary btn-lg" href = "/home/sapna/keystone/Weekly-menu-plan/grocerylist.html" role = "button">Email my Menu plan</a>
-				
-			</div>		
-		
-	</body>
+        <div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="BFST:1">&nbsp;
+	  </div>
+	</div>
+	
+        <div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="LNCH:1">&nbsp;
+	  </div>
+	</div>
+	
+	
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="DNNR:1">&nbsp;
+	  </div>
+	</div>
+      </div>
+      
+      
+      
+      <div class="row">
+	<div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="BFST:2">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="LNCH:2">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="DNNR:2">&nbsp;
+	  </div>
+	</div>
+      </div>
+      
+      <div class="row">
+	<div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="BFST:3">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="LNCH:3">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="DNNR:3">&nbsp;
+	  </div>
+	</div>
+      </div>
+      
+      <div class="row">
+	<div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="BFST:4">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="LNCH:4">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="DNNR:4">&nbsp;
+	  </div>
+	</div>
+      </div>
+      
+      <div class="row">
+	<div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="BFST:5">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="LNCH:5">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="DNNR:5">&nbsp;
+	  </div>
+	</div>
+      </div>
+      
+      <div class="row">
+	<div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="BFST:6">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="LNCH:6">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="DNNR:6">&nbsp;
+	  </div>
+	</div>
+      </div>
+      
+      <div class="row">
+	<div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="BFST:7">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="LNCH:7">&nbsp;
+	  </div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content" onclick="showChoice(event)" id="DNNR:7">&nbsp;
+	  </div>
+	</div>
+      </div>
+      </div>
+      
+      <div class="row">
+	<p>
+	  <a class = "btn btn-info" href = "https://www.amazon.com/AmazonFresh" role = "button">Online shopping</a>&nbsp &nbsp	
+	  <a class = "btn btn-info" href = "https://www.google.com/maps/search/grocery+shops" role = "button">Local stores near you</a>&nbsp &nbsp
+	  <a class = "btn btn-info" href = "https://www.google.com/maps/search/gym" role = "button">Local gym near you</a>&nbsp &nbsp
+      </div>
+      
+      <div class="btn-group btn-group-justified">
+	<a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Save my menu</a> 
+	<a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Generate List</a>
+	<a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Print my Menu plan</a>
+	<a class = "btn btn-primary btn-lg" href = "grocerylist.html" role = "button">Email my Menu plan</a>
+	
+      </div>		
+    </div> <!-- end meal plan table -->
+
+  </div> <!-- full page container -->
+
+</body>
 </html>

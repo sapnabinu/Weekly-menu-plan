@@ -1,68 +1,13 @@
-
-<!DOCTYPE html>
-<html lang="en">
-	
-<head>
-	<title>Menu planner using Boot strap</title>
-	<meta char-set="utf-8">
-	<meta name="viewport" content="width-device-width,initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	<script>
-		
-		function choice() {
-			$.get( "http://allrecipes.com/recipe/9295/red-velvet-cake/", 
-				  function(recipeData) {
-						var SplitText = "Title"
-						var $dialog = $('<div style="background-color:green"></div>')
-    						.html(SplitText )
-						    .dialog({
-    						    height: 500,
-        						width: 600,
-        						title: ''});
-				  		$dialog.dialog('open');
-						$dialog.html('Food List' + recipeData );
-			}, 'html');
-	</script>	
-	
-	
-</head>
-	
-	<body>
-		
-
-<form action="">
-	
-	
-	
-		<h4><a class="text" onclick="choice()">Red velvet cake</a></h4>
-		  	
-			
-		
-		
-		<h4><a class = "text" href = "https://cooking.nytimes.com/recipes/1016329-red-velvet-cake">Stack cake</a></h4>
-		<h4><a class = "demo-content" href = "https://cooking.nytimes.com/recipes/1016329-red-velvet-cake">Strawberry shortcake</a></h4>
-		
-	<h4 class="text">American fried rice</h4>
-    <h4 class="text">Calas</h4>
-    <h4 class="text">Charleston red rice</h4>
-    <h4 class="text">Chicken bog</h4>
-    <h4 class="text">Dirty rice</h4>
-    <h4 class="text">Glorified rice</h4>
-    <h4 class="text">Gumbo</h4>
-    <h4 class="text">Hawaiian haystack</h4>
-	
-	
-	
-	
-	</div>
-	
-	<input type="radio" name="recipe" value="male">American</input>
-	<input type="radio" name="recipe" value="female">Asian</input>
-	<input type="radio" name="recipe" value="other">Europian</input>
-
-</form>
+<div id="recipelist" style="background-color:#eeeee0;" >
+  <div onClick="chooseRecipe(event)" data-rname="Red velvet cake">Red velvet cake</div>
+  <div onClick="chooseRecipe(event)" data-rname="Stack cake">Stack cake</div>
+  <div onClick="chooseRecipe(event)" data-rname="Strawberry shortcake">Strawberry shortcake</div>
+  <div onClick="chooseRecipe(event)" data-rname="American fried rice">American fried rice</div>
+  <div onClick="chooseRecipe(event)" data-rname="Calas">Calas</div>
+  <div onClick="chooseRecipe(event)" data-rname="Charleston red rice">Charleston red rice</div>
+  <div onClick="chooseRecipe(event)" data-rname="Chicken bog">Chicken bog</div>
+  <div onClick="chooseRecipe(event)" data-rname="Dirty rice">Dirty rice</div>
+  <div onClick="chooseRecipe(event)" data-rname="Glorified rice">Glorified rice</div>
+  <div onClick="chooseRecipe(event)" data-rname="Gumbo">Gumbo</div>
+  <div onClick="chooseRecipe(event)" data-rname="Hawaiian haystack">Hawaiian haystack</div>
+</div>

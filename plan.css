@@ -1,0 +1,20 @@
+p{
+    padding: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    background: #dbdfe5;
+}
+
+.demo-content {
+    padding: 20px;
+    font-size: 15px;
+    min-height: 50px;
+    background: #dbdfe5;
+    text-align: center;	  
+    margin-bottom: 10px;
+}
+
+.demo-content.bg-alt {
+    background: #abb1b8;
+}
