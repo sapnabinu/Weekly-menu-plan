@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+  <title>Menu planner using Boot strap</title>
+  <meta char-set="utf-8">
+  <meta name="viewport" content="width-device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="plan.js"></script>
+
+  <!--Date -->	
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="plan.css">
+
+  <script>
+    var srcdiv;
+    <!--calender-->
+    window.onload = function() {
+        $("#datepicker").datepicker();
+        $("#datepicker").datepicker("setDate", "0");
+	spinWidget = $( "#spinner" ).spinner({ min: 3,
+					       max: 10,
+					       stop: function(event, ui) {generateRows();}
+	});
+        generateRows();
+    };
+  </script>
+ 
+	
+</head>
+
+<body>
+	
+	
+	<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
+    <a href="menupage.html" class="w3-bar-item w3-button">MENU PLAN</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#googleMap" class="w3-bar-item w3-button">CONTACT</a>
+	
+    <a href="olduser_signin.html" class="w3-bar-item w3-button">SIGN IN</a>
+ </div>    
+</div>
+	
+	<br><br><br>
+
+  <div class="container">
+
+    <div class="row">
+    
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-6">
+        <h1 class="text-center"><span style="color:black;">Weekly Menu Planner</span></h1>
+      </div>
+      <div class="col-sm-3">
+      </div>
+      
+    </div>
+
+    <div id="recipedialog"></div>
+    <div class="row" style="background-color:lightgray;">&nbsp;</div>
+    <div class="row" style="background-color:lightgray;">
+
+    <div class="col-md-2"> <!-- more options column -->
+	<div class="dropdown">
+	  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+	    More Options
+	    <span class = "caret"></span>
+	  </button>
+
+	  <ul class = "dropdown-menu">
+	    <li><a href="easyplan.html" class="wsite-menu-subitem"><span class="wsite-menu-title">Easy meal plan</span></a></li>
+            
+	    <li><a href="menuhistory.html">Your presaved menu</a></li>
+	    <li><a href="recipeorganizer.html">Recipe Organizer</a></li>
+	    <!--li class="divider"></li>
+	    <li><a href="sharee(1).html">Share Receipes with Friends</a></li>
+	    <li><a href="Remember_me.html">Set up Reminder</a></li-->
+	  </ul>
+	</div>
+      </div> <!-- end more options column -->
+      
+      <div class="col-md-2">
+	<select>  
+	  <option value="Type of Meal">Type of Meal</option>
+	  <option value="Low calorie">Low calorie</option>
+	  <option value="Kids meal">Kids meal</option>
+	  <option value="Vegan">Vegan</option>
+	</select>
+      </div>
+      	
+      <div class="col-md-2">
+	<label>Count:</label>
+	<input type="text" name="query" id="query" size="4" value="1" />
+      </div>
+
+      <div class="col-md-2">
+	<div class = "dropdown">
+	  <button type = "button" class = "btn btn-primary dropdown-toggle" data-toggle = "dropdown">
+	    Menu Info
+	    <span class = "caret"></span>
+	  </button>	  
+	  <ul class = "dropdown-menu col-xs-3">
+	    <li><a href="projects/index.html">View Calories</a></li>
+	    <li><a href="projects/index.html">View Nutritional facts</a></li>
+	    <li><a href="projects/index.html">Cost</a></li>
+	    <li><a href="projects/index.html">Time to prepare</a></li>
+	  </ul>
+	</div> 
+      </div> <!-- end menu info -->
+
+      <div class="col-md-2">
+	  <label for="spinner">Days in plan:</label>
+	  <input size="2" value="7" id="spinner" name="value">
+      </div>
+      
+       <div class="col-sm-1">
+	      <a class="btn btn-primary" href="reminder.html" role="button">Reminder</a>
+      </div>
+      
+     
+    </div> <!-- end top menu bar -->
+
+    <div class="row" style="background-color:lightgray;">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+
+    <div style="background-color:#f5f5f5" id="plancontainer">
+      
+      <!-- meal plan table -->
+      <div class="row" id="planheader">
+	<div class="col-md-3">
+	  <p class="demo-content">Start Date<input type="text" id="datepicker"></p>
+	</div>
+	<div class="col-md-3">
+	  <div class="demo-content"><h3 class="text-center">Breakfast</h3></div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content"><h3 class="text-center">Lunch</h3></div>
+	</div>
+	<div class="col-md-3">
+          <div class="demo-content"><h3 class="text-center">Dinner</h3></div>
+	</div>
+      </div>
+    </div>
+	  
+	  <div class="btn-group btn-group-justified">
+	<a class = "btn btn-primary btn-lg" onclick="saveMenu()" role = "button">Save my menu</a> 
+	<a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Generate List</a>
+	<a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Print my Menu plan</a>
+	<a class = "btn btn-primary btn-lg" href = "grocerylist.html" role = "button">Email my Menu plan</a>
+	 </div>	
+      
+      <div class="row">
+	  <a class = "btn btn-info" href = "https://www.amazon.com/AmazonFresh" role = "button">Online shopping</a>&nbsp &nbsp	
+	  <a class = "btn btn-info" href = "https://www.google.com/maps/search/grocery+shops" role = "button">Local stores near you</a>&nbsp &nbsp
+	  <a class = "btn btn-info" href = "https://www.google.com/maps/search/gym" role = "button">Local gym near you</a>&nbsp &nbsp
+     </div>
+      
+      	
+    </div> <!-- end meal plan table -->
+
+  </div> <!-- full page container -->
+
+</body>
+</html>
