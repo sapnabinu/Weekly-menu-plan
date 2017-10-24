@@ -1,10 +1,15 @@
-p1{
+.headings{
     padding: 10px;
     font-size: 32px;
     font-weight: bold;
     text-align: center;
-    background: #dbdfe5;
+    background: #bbdfe5;
 }
+
+
+    
+
+
 
 .demo-content {
     padding: 20px;
@@ -19,19 +24,58 @@ p1{
     background: #abb1b8;
 }
 
+
+
+
+
 body, html {height: 100%}
-body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+body,h1,h2,h3,h4,h5,h6  { font-family: "Times New Roman", Times, serif; color: black;}
 .menu {display: none}
 .bgimg {
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("http://cdnwp.audiencemedia.com/wp-content/uploads/2017/03/479931-1-eng-GB_chicken-noodle-salad-960x420.jpg");
     min-height: 90%;
+    
 }
 
 
 
 
+
+body {
+     background-image: url("https://static1.squarespace.com/static/578ea3a92994ca6eb427c480/t/57c731f1e4fcb5b41e384e6b/1472672483536/vegetables-background-000046272610_full1.jpg?format=1500w"), url("img_flwr.gif") ;
+      
+    background-color: #cccccc;
+    padding: 20px;
+        font-size: 15px;
+        min-height: 350px;
+        
+        background-size: 1500px 700px;
+        background-repeat: no-repeat;
+    padding-top: 10px;
+		text-align: center;	  
+        margin-bottom: 10px;
+}
+
+
+
+
+   
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 10px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    
+   
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
@@ -49,6 +93,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
       margin: auto;
       min-height:200px;
       <img src="p/landscape-1490969542-350-calories-collage"/>
+      
       
   }
 
