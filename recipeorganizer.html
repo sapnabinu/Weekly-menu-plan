@@ -22,12 +22,14 @@
 </head>
 <body>
 
+  <!-- Navbar (sit on top) -->
   <div class="w3-top w3-hide-small">
   <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
     <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
     <a href="menupage.html" class="w3-bar-item w3-button">MENU PLAN</a>
-	<a href="about.html" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="contactus.html" class="w3-bar-item w3-button">CONTACT</a>
+	  <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
+    <a href="homepage.html#login" class="w3-bar-item w3-button">SIGN IN</a>
         <label for="query"><span style="color:white; font-size: 15px;">Search
           <input type="text" name="query" id="query" size="20" value="" />
        </span> </label>
@@ -41,8 +43,8 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p><a href="#">Kids Meal</a></p>
-      <p><a href="#">Low Calorie</a></p>
+      <p><a href="#kidsmeal">Kids Meal</a></p>
+      <p><a href="#lowcalorie">Low Calorie</a></p>
       <p><a href="#">Fast Food</a></p>
         <p><a href="#">Salads</a></p>
       <p><a href="#">Snacks</a></p>
@@ -69,8 +71,66 @@
   </div>
 </div>
 
+  
+  
 <footer class="container-fluid text-center">
-  <p>Organizer</p>
+  
+    
+      <!-- All menu Page CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+  
+<hr id="kidsmeal"> 
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
+      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
+      <h3>Let Me Tell You About This Steak</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
+      <h3>Cherries, interrupted</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <p>What else?</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
+      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
+  
+    <hr id="lowcalorie"> 
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
+      <h3>All I Need Is a Popsicle</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
+      <h3>Salmon For Your Skin</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
+      <h3>The Perfect Sandwich, A Real Classic</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
+      <h3>Le French</h3>
+      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
+    
+  
 </footer>
 
 </body>

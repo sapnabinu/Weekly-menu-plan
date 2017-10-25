@@ -29,7 +29,9 @@
 
 
 body, html {height: 100%}
-body,h1,h2,h3,h4,h5,h6  { font-family: "Times New Roman", Times, serif; color: black;}
+body,h1,h2,h4,h5,h6  { font-family: "Verdana",sans-serif; color: black;}
+
+h3{ color:yellow;}
 .menu {display: none}
 .bgimg {
     
