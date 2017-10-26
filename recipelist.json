@@ -1,0 +1,11 @@
+{ "recipes" : [ [ "Red velvet cake","BFST","","","","","","","","","redvelvet.jpg" ],
+		["Stack cake","BFST","","","","","","","","","stack.jpg" ],
+		["Strawberry shortcake","BFST","","","","","","","","","strawberry.jpg" ],
+		["American fried rice","BFST","","","","","","","","","americanfried.jpg" ],
+		["Calas","LNCH","","","","","","","","","calas.jpg" ],
+		["Charleston red rice","LNCH","","","","","","","","","charlestonred.jpg" ],
+		["Chicken bog","LNCH","","","","","","","","","chickenbog.jpg" ],
+		["Dirty rice","LNCH","","","","","","","","","dirtyrice.jpg" ],
+		["Glorified rice","DNNR","","","","","","","","","glorifiedrice.jpg" ],
+		["Gumbo","DNNR","","","","","","","","","gumbo.jpg" ],
+		["Hawaiian haystack","DNNR","","","","","","","","","hawaiianhaystack.jpg" ] ] }

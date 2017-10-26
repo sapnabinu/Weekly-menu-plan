@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="plan.js"></script>
+
+  <!--Date -->	
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="plan.css">
 <style>
 body {
   margin: 0;
@@ -80,7 +97,7 @@ ul li.checked::before {
 
 /* Style the header */
 .header {
-  background-color: #f44336;
+  background-color: #4CAF50;
   padding: 30px 40px;
   color: white;
   text-align: center;
@@ -121,7 +138,19 @@ input {
 </style>
 </head>
 <body>
-
+  
+  <!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
+    <a href="menupage.html" class="w3-bar-item w3-button active">MENU PLANNER</a>
+    <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
+  </div>
+</div>
+  
+<br><br>
+  
 <div id="myDIV" class="header">
   <h2 style="margin:5px">My Grocery List</h2>
   <input type="text" id="myInput" placeholder="Title...">
@@ -194,13 +223,16 @@ function newElement() {
   }
 }
 </script>
+  
+    
+  
 	<div class="btn-group btn-group-justified">
 	<p>
-			<a class = "btn btn-info" href = "https://www.amazon.com/AmazonFresh" role = "button">Online shopping</a>&nbsp &nbsp	
-			<a class = "btn btn-info" href = "https://www.google.com/maps/search/grocery+shops" role = "button">Local stores near you</a>&nbsp &nbsp
-		    <a class = "btn btn-primary btn-lg" href = "grocerylist.html" role = "button">Print my Menu plan</a>&nbsp &nbsp
+			<a class = "btn btn-primary btn-lg" href = "https://www.amazon.com/AmazonFresh" role = "button">Online shopping</a>&nbsp &nbsp	
+			<a class = "btn btn-primary btn-lg" href = "https://www.google.com/maps/search/grocery+shops" role = "button">Local stores near you</a>&nbsp &nbsp
+		  <a class = "btn btn-primary btn-lg" href = "grocerylist.html" role = "button">Print my Menu plan</a>&nbsp &nbsp
 			<a class = "btn btn-primary btn-lg" href = "grocerylist.html" role = "button">Email my Menu plan</a>
-			<a class = "btn btn-info" role = "button">Edit my list</a>&nbsp &nbsp-->	
+			<a class = "btn btn-primary btn-lg" role = "button">Save my list</a>&nbsp &nbsp
 	</p>
 	</div>		
 	

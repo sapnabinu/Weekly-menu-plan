@@ -11,8 +11,8 @@ Date.prototype.addDays = function(days) {
 function makeCell(mealType, row) {
     var div = document.createElement("div");
     div.className = "demo-content";
-    div.onclick = "showChoice(event)";
-    div.id = mealType + ":" + row;
+    div.onclick = showChoice;
+    div.id = "MPMI:" + mealType + ":" + row;
     div.innerHTML = "--choose--";
 
     var divWrap = document.createElement("div");
@@ -89,9 +89,9 @@ function chooseRecipe(event) {
 
 function saveMenu(event) {
     var postData = [];
-    $("div[onclick*='showChoice']").each(function() {
+    $("div[id*='MPMI']").each(function() {
 	var typeRow = this.id.split(":");
-	var mealType = typeRow[0];
+	var mealType = typeRow[1];
 	var mealRow = typeRow[1];
 	var mealDate = $("#datepicker").datepicker("getDate");
 	postData.push(["", mealType, mealDate, this.innerHTML])

@@ -4,17 +4,40 @@
   <title>Existing user login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="plan.css">
+<title>Menu History</title>
+<link rel="stylesheet" href="plan.css">	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="plan.css">
   
 </head>
   
 <body>
 
+   <!-- Navbar (sit on top) -->
+  <div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
+    <a href="menupage.html" class="w3-bar-item w3-button">MENU PLAN</a>
+	  <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
+    <a href="homepage.html#login" class="w3-bar-item w3-button">SIGN IN</a>
+    </div></div>
+    <br>
+    <br>
+    
+  
 <div class="container">
-  <h2>Add Recipe Page</h2>
+  <h1> <span style="color:yellow; font-size: 40px;"> Add Recipe Page</span></h1>
+  
+    <div style="background-color:#f5f5f5" id="plancontainer">
   <form action="/action_page.php">
     <div class="form-group">
       <label for="email">Recipe Title</label>
@@ -33,14 +56,8 @@
       <label for="pwd">Directions:</label>
       <input type="dir" class="form-control" id="dir" placeholder="Enter direction" name="dir">
     </div>
-	  
-	  
-	  <!--form action="/recipes/update/12540557" method="post" class="ajax" data-callback="return_show_edit_form">
-<input type="hidden" name="partial_section" value="recipe_photo">
-<input type="hidden" name="recipe[event_id]" value="">
-<div class="show-edit-section show recipe_photo" data-recipe-id="12540557" data-partial-section="recipe_photo">
-	<div class="photo-box"-->
-		
+     
+	
 	  
 	  <div class="text">Prep Time
 	  <input type="text" name="time" id="time" size="4" value="1" /></div>
@@ -53,16 +70,13 @@
      <div class="text">Cost
 	  <input type="text" name="time" id="time" size="4" value="1" /></div>
     
-	 
-		 <br><br>
-	  
-			 
+		
 	  
     <button type="Save" class="btn btn-primary">Save</button>
     <br><br><br>
     <p class="center larger"><strong><a href="#">Want to change your recipe?</a></strong>      |      <strong><a href="newuser_signup.html">Delete your recipe?</a></p>
-
+</form></div>
      
-  </form>
+  
 </body>
 </html>
