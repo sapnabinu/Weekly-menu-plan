@@ -24,19 +24,8 @@
   <link rel="stylesheet" href="plan.css">
 
   <script>
-    var srcdiv;
-    <!--calender-->
-    window.onload = function() {
-        $("#datepicker").datepicker();
-        $("#datepicker").datepicker("setDate", "0");
-	spinWidget = $( "#spinner" ).spinner({ min: 3,
-					       max: 10,
-					       stop: function(event, ui) {generateRows();}
-	});
-        generateRows();
-    };
-  </script>
- 
+    window.onload = menuplanSetup;
+  </script> 
 	
 </head>
 
