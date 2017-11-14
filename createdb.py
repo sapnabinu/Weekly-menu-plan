@@ -11,6 +11,7 @@ class MealDB():
         self.cursor = self.conn.cursor()
         self.createMealPlanTable()
         self.createRecipeTable()
+        self.createUserTable()
 
     def createMealPlanTable(self):
         query = """CREATE TABLE IF NOT EXISTS MEAL_PLAN (
@@ -34,7 +35,7 @@ class MealDB():
            KIDS_MEAL INT DEFAULT 0,
            VEGAN_MEAL INT DEFAULT 0,
            LOW_CALORIE INT DEFAULT 0,
-           IMAGE BLOB DEFAULT NULL,
+           IMAGE TEXT DEFAULT NULL,
            PRIMARY KEY (`NAME`,`MEAL_TIME`))"""
         self.cursor.execute(query)
         self.conn.commit()
@@ -51,6 +52,15 @@ class MealDB():
         self.cursor.execute(query)
         self.conn.commit()
 
+    def createIngredientsTable(self):
+        query = """CREATE TABLE IF NOT EXISTS INGREDIENTS (
+                RECIPE_NAME text,
+                INGREDIENT text,
+                QUANTITY text,
+                UNIT text )"""
+        self.cursor.execute(query)
+        self.conn.commit()
+        
     def getPlan(self, startDate, endDate):
         query = "SELECT * FROM MEAL_PLAN WHERE MEAL_DATE BETWEEN ? AND ?"
         print query, startDate, endDate
@@ -66,23 +76,26 @@ class MealDB():
         self.cursor.executemany(query,rows)
         self.conn.commit()
 
+    def addUser(self, row):
+        query = """INSERT OR REPLACE INTO USER_ACCOUNT
+        (USERID,PASSWORD,FIRST_NAME,LAST_NAME,EMAIL,PHONE)
+        VALUES(?,?,?,?,?,?)"""
+        self.cursor.execute(query, row)
+        self.conn.commit()
+
     def addRecipe(self, rows):
-        query = """INSERT INTO RECIPES (NAME,MEAL_TIME,CALORIES,COST,RECIPE,
+        query = """INSERT OR REPLACE INTO RECIPES (NAME,MEAL_TIME,CALORIES,COST,RECIPE,
            TIME_TO_COOK,PREP_TIME,KIDS_MEAL,VEGAN_MEAL,LOW_CALORIE,IMAGE)
            VALUES(?,?,?,?,?,?,?,?,?,?,?)"""
         print self.cursor.executemany(query,rows)
         self.conn.commit()
 
     def getRecipe(self,mealTime):
-        query="SELECT NAME,RECIPE,IMAGE FROM RECIPES WHERE MEAL_TIME = ?"
+        query = """SELECT * FROM RECIPES WHERE MEAL_TIME = ?"""
         self.cursor.execute(query, [mealTime])
         r = self.cursor.fetchall()
         print r
         return r
-
-    def populateSampleData(self):
-        recipeList = json.load(open("recipelist.json"))["recipes"]
-        self.addRecipe(recipeList)
 
     def getPassword(self, user):
         query = """SELECT PASSWORD FROM USER_ACCOUNT WHERE EMAIL = ?"""
@@ -90,6 +103,26 @@ class MealDB():
         r = self.cursor.fetchall()
         print r
         return r[0][0]
+
+    def getIngredients(self,recipe):
+        query = """SELECT * from INGREDIENTS WHERE RECIPE_NAME = ?"""
+        self.cursor.execute(query)
+        r = self.cursor.fetchall()
+        print r
+        return r
+
+    def addIngredients(self,rows):
+        query = """INSERT OR REPLACE INTO INGREDIENTS (
+                RECIPE_NAME,INGREDIENT,QUANTITY,UNIT) VALUES (?,?,?,?)"""
+        print "addIngredients:", query, rows
+        self.cursor.execute(query, rows)
+        self.conn.commit()
+
+    def populateSampleData(self):
+        sampleData = json.load(open("recipelist.json"))
+        self.addRecipe(sampleData["recipes"])
+        self.addUser(sampleData["users"])
+        self.addIngredients(sampleData["ingredients"])
 
 if __name__ == "__main__":
     m = MealDB()

@@ -28,9 +28,12 @@ class S(BaseHTTPRequestHandler):
 
     postMap = { "/addplan" : "addPlan",
                 "/login" : "login",
-                "/logout" : "logout" }
+                "/logout" : "logout", 
+                "/newuser" : "newuser",
+                "/addrecipe" : "addrecipe"}
 
-    exemptedPaths = ["/homepage.html", "/login"]
+    
+    exemptedPaths = ["/homepage.html", "/login", "/newuser.html", "/newuser" ]
 
     def _set_headers(self, extension):
         mimetype = self.mimeMap.get(extension)
@@ -112,6 +115,16 @@ class S(BaseHTTPRequestHandler):
         else:
             print "authentication failed", self.exemptedPaths, self.path
         self._set_headers("None")
+        
+        
+    #ADD RECIPE    
+    def addrecipe(self, data):
+        for d in data:
+            pprint.pprint(d)
+        mealDB.addrecipe(data)
+        self._set_headers("html")
+        
+        
 
     def login(self, data):
         user = data["user"]
@@ -126,6 +139,18 @@ class S(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps({"authcookie" : cookie}))
         else:
             self.send_response(401)
+            
+ 
+    #NEW USER  
+    def newuser(self,data):
+        user = data["user"]
+        password = data["password"]
+               
+        #  USERID,PASSWORD,FIRST_NAME,LAST_NAME,EMAIL,PHONE      
+        mealDB.addUser(["",password,"","",user,""])
+        self._set_headers("html")
+       
+                    
 
     def logout(self, data):
         cookie = self.checkAuth()
@@ -135,6 +160,8 @@ class S(BaseHTTPRequestHandler):
         user = loginCookieMap.pop(cookie)
         self._set_headers("json")
         self.wfile.write(json.dumps({"user" : user}))
+        
+        
 
     def checkAuth(self):
         cookieObject = Cookie.SimpleCookie(self.headers.get("Cookie"))
@@ -151,6 +178,8 @@ class S(BaseHTTPRequestHandler):
         else:
             print "checkAuth succeeded", cookie
             return cookie or "exempt"
+        
+        
                              
 def run(server_class=HTTPServer, handler_class=S, port=8000):
     global mealDB

@@ -1,3 +1,8 @@
+.small-font {
+    font-size: 10px;
+    font-family: "Andale Mono, monospace";
+}
+
 .headings{
     padding: 10px;
     font-size: 32px;

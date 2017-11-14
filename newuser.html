@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Existing user login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+   
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="plan.js"></script>
+
+  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="plan.css">
+
+
+	</head>
+	
+<body>
+  
+  
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
+    <a href="menupage.html" class="w3-bar-item w3-button">MENU PLAN</a>
+    <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
+    <a href="homepage.html#login" class="w3-bar-item w3-button">SIGN IN</a>
+    
+  </div>
+</div>
+  
+  
+  <!--New User Sign Up-->
+   <div class="w3-padding-64 w3-light-grey w3-large w3-center" id="newuser">
+    <div class="w3-row-padding">
+      <div class="w3-col s4"style="font-size:20px">
+        <h2>New User Login</h2>
+        
+        
+          
+          <p><input class="w3-input w3-border" type="text" placeholder="Enter Email" id="newemail" required style="font-size:20px"></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Password" id="newpassword" required style="font-size:20px"></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Repeat Password" id="repeatpassword" required style="font-size:20px"></p>
+          
+          
+          <div style="font-size:15px">
+          <p>By creating an account you agree to our <br><a href="#">Terms & Privacy</a>.</p>
+          </div>
+          <button type="submit" class="w3-button w3-block w3-black" id="newloginbutton" onclick="newuser()" style="font-size:20px">Sign Up</button>
+          <br>
+          <button type="button" class="w3-button w3-block w3-black" id="cancelbutton" onclick="clear()" style="font-size:20px">Cancel</button>
+      
+        <br>
+      
+      </div>
+     </div>
+  </div>
+  
+</body>
+</html>

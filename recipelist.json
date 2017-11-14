@@ -1,11 +1,40 @@
-{ "recipes" : [ [ "Red velvet cake","BFST","","","","","","","","","/recipeimages/images1.jpg" ],
-		["Stack cake","BFST","","","","","","","","","/recipeimages/images2.jpg" ],
-		["Strawberry shortcake","BFST","","","","","","","","","/recipeimages/images3.jpg" ],
-		["American fried rice","BFST","","","","","","","","","/recipeimages/images4.jpg" ],
-		["Calas","LNCH","","","","","","","","","/recipeimages/images5.jpg" ],
-		["Charleston red rice","LNCH","","","","","","","","","/recipeimages/images6.jpg" ],
-		["Chicken bog","LNCH","","","","","","","","","/recipeimages/images7.jpg" ],
-		["Dirty rice","LNCH","","","","","","","","","/recipeimages/images8.jpg" ],
-		["Glorified rice","DNNR","","","","","","","","","/recipeimages/images9.jpg" ],
-		["Gumbo","DNNR","","","","","","","","","/recipeimages/images10.jpg" ],
-		["Hawaiian haystack","DNNR","","","","","","","","","/recipeimages/images11.jpg" ] ] }
+{ "recipes" : [ [ "Red velvet cake",	 "BFST",  1, 110, "", 10, 21, 0, 1, 0, "/recipeimages/images1.jpg" ],
+		["Stack cake",		 "BFST",  2, 210, "", 20, 22, 1, 0, 1, "/recipeimages/images2.jpg" ],
+		["Strawberry shortcake", "BFST",  3, 310, "", 30, 23, 0, 1, 0, "/recipeimages/images3.jpg" ],
+		["American fried rice",	 "BFST",  4, 410, "", 40, 24, 1, 0, 1, "/recipeimages/images4.jpg" ],
+		["Calas",		 "LNCH",  5, 510, "", 50, 25, 0, 1, 0, "/recipeimages/images5.jpg" ],
+		["Charleston red rice",	 "LNCH",  6, 610, "", 60, 26, 1, 0, 1, "/recipeimages/images6.jpg" ],
+		["Chicken bog",		 "LNCH",  7, 710, "", 70, 27, 0, 1, 0, "/recipeimages/images7.jpg" ],
+		["Dirty rice",		 "LNCH",  8, 810, "", 80, 28, 1, 0, 1, "/recipeimages/images8.jpg" ],
+		["Glorified rice",	 "DNNR",  9, 910, "", 90, 29, 0, 1, 0, "/recipeimages/images9.jpg" ],
+		["Gumbo",		 "DNNR", 10,  10, "", 11, 30, 1, 0, 1, "/recipeimages/images10.jpg" ],
+		["Hawaiian haystack",	 "DNNR", 11,  20, "", 12, 31, 0, 1, 0, "/recipeimages/images11.jpg" ] ],
+  "_comment" :  [          "NAME",  "MEAL_TIME","CALORIES",
+			                           "COST", "RECIPE", "TIME_TO_COOK", "PREP_TIME",
+							              "KIDS_MEAL", "VEGAN_MEAL", "LOW_CALORIE",
+			   "IMAGE" ],
+
+  "users" : [ [ "a user", "123", "A", "user", "a@b.c", "1234567890" ],
+	      [ "b user", "456", "B", "user", "b@c.d", "1987654320" ] ],
+
+  "ingmap" : [ [ 1, "ingredient-1", "gram" ],
+	       [ 2, "ingredient-1", "gram" ],
+	       [ 3, "ingredient-1", "gram" ],
+	       [ 4, "ingredient-1", "gram" ],
+	       [ 5, "ingredient-1", "gram" ],
+	       [ 6, "ingredient-1", "gram" ],
+	       [ 7, "ingredient-1", "gram" ],
+	       [ 8, "ingredient-1", "gram" ],
+	       [ 9, "ingredient-1", "gram" ],
+	       [ 10, "ingredient-1", "gram" ],
+	       [ 11, "ingredient-1", "gram" ] ]
+
+  "ings" : [ [ "Red velvet cake", "igdt 1", "1", "g"],
+		    [ "Red velvet cake", "igdt 2", "3", "ml"],
+		    [ "Red velvet cake", "igdt 3", "5", "lb"],
+		    [ "Red velvet cake", "igdt 5", "7", "count"],
+		    [ "Calas",		 "igdt 2", "7", "count"],
+
+  
+
+}

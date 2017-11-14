@@ -44,7 +44,14 @@
 </div>
 	
 	<br><br><br>
-
+  
+  
+<!--ul class="recipe-links">
+		<li><a href="http://dietzandwatson.com/recipe-categories/">Easy Meal Plan</a></li>
+		<li><a href="http://dietzandwatson.com/recipes/">Receipe Organizer</a></li>
+</ul-->
+  
+  
   <div class="container">
     <div id="recipedialog"></div>
     <div class="row" style="background-color:lightgray;">&nbsp;</div>
@@ -60,44 +67,30 @@
 	  <ul class = "dropdown-menu">
 	    <li><a href="easyplan.html" class="wsite-menu-subitem"><span class="wsite-menu-title">Easy meal plan</span></a></li>
             
-	    <li><a href="menuhistory.html">Your presaved menu</a></li>
+	    <!--li><a href="menuhistory.html">Your presaved menu</a></li-->
 	    <li><a href="recipeorganizer.html">Recipe Organizer</a></li>
 	    
 	  </ul>
 	</div>
       </div> <!-- end more options column -->
       
-      <div class="col-md-2">
-	<select>  
-	  <option value="Type of Meal">Type of Meal</option>
-	  <option value="Low calorie">Low calorie</option>
-	  <option value="Kids meal">Kids meal</option>
-	  <option value="Vegan">Vegan</option>
-	</select>
-      </div>
+    
       	
       <div class="col-md-2">
-	<label>Count:</label>
+	<label>Cook for:</label>
 	<input type="text" name="query" id="query" size="4" value="1" />
       </div>
 
       <div class="col-md-2">
-	<div class = "dropdown">
-	  <button type = "button" class = "btn btn-primary dropdown-toggle" data-toggle = "dropdown">
-	    Menu Info
-	    <span class = "caret"></span>
-	  </button>	  
-	  <ul class = "dropdown-menu col-xs-3">
-	    <li><a href="projects/index.html">View Calories</a></li>
-	    <li><a href="projects/index.html">View Nutritional facts</a></li>
-	    <li><a href="projects/index.html">Cost</a></li>
-	    <li><a href="projects/index.html">Time to prepare</a></li>
-	  </ul>
-	</div> 
+	    <select name="menuinfo" id="menuinfo">
+	      <option value="2">Calories</option>
+	      <option value="3">Cost</option>
+	      <option value="5">Time</option>
+	    </select>
       </div> <!-- end menu info -->
 
-      <div class="col-md-2">
-	  <label for="spinner">Days in plan:</label>
+      <div class="col-md-4">
+	  <label for="spinner">No of Days:</label>
 	  <input size="2" value="7" id="spinner" name="value">
       </div>
       
@@ -119,13 +112,13 @@
 	  <p class="demo-content">Start Date<input type="text" id="datepicker"></p>
 	</div>
 	<div class="col-md-3">
-	  <div class="demo-content"><h2 class="text-center">Breakfast</h2></div>
+		<div class="demo-content"><h2 class="text-center"><a href="breakfast.html">Breakfast</a></h2></div>
 	</div>
 	<div class="col-md-3">
-          <div class="demo-content"><h2 class="text-center">Lunch</h2></div>
+		<div class="demo-content"><h2 class="text-center"><a href="lunch.html">Lunch</a></h2></div>
 	</div>
 	<div class="col-md-3">
-          <div class="demo-content"><h2 class="text-center">Dinner</h2></div>
+		<div class="demo-content"><h2 class="text-center"><a href="dinner.html">Dinner</a></h2></div>
 	</div>
       </div>
     </div>
