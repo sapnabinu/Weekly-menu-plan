@@ -5,6 +5,7 @@ var recipeList = null;
 var planList = {};
 var authCookie = null;
 var userName = null;
+var recipeNameTimeMap = {}
 
 Date.prototype.addDays = function(days) {
   var dat = new Date(this.valueOf());
@@ -13,14 +14,22 @@ Date.prototype.addDays = function(days) {
 }
 
 function menuplanSetup() {
-    $("#datepicker").datepicker();
+    document.getElementById("menuinfo").onchange=startDateChange;
+    $("#datepicker").datepicker({ onSelect: startDateChange } );
     $("#datepicker").datepicker("setDate", "0");
+    
     spinWidget = $( "#spinner" ).spinner({ min: 3,
                                            max: 10,
-                                           stop: function(event, ui) {generateRows();}
+                                           stop: function(event, ui) { generateRows();}
                                          });
     function assignRecipeList () {
         recipeList = JSON.parse(this.responseText);
+	var entry;
+	Object.keys(recipeList).forEach(function(lstName, ri) {
+	    recipeList[lstName].forEach(function(recipe, i) {
+		recipeNameTimeMap[recipe[0] + ":" + recipe[1]] = recipe;
+	    });
+	});
     }
 
     var xhr = new XMLHttpRequest();
@@ -41,7 +50,10 @@ function makeCell(mealType, row, mealDate) {
     if (planChoice == null) {
         div.innerHTML = "--choose--";
     } else {
-        div.innerHTML = planChoice[3];
+	var e = document.getElementById("menuinfo");
+	var idx = e.options[e.selectedIndex].value;
+	var recipe = recipeNameTimeMap[planChoice[3] + ":" + planChoice[1]];
+        div.innerHTML = makeMealHtml(recipe);
     }
 
     var divWrap = document.createElement("div");
@@ -124,14 +136,24 @@ function onPlanFetch() {
     curRows = reqRows;
 }
 
-function makeRecipeDiv(entry) {
+function startDateChange() {
+    for(var row=1; row <= curRows; row++) {
+        var delDiv = document.getElementById("ROW:" + row);
+        document.getElementById("plancontainer").removeChild(delDiv);
+    }
+    curRows = 0;
+    onPlanFetch();
+}
+
+function makeRecipeDiv(mealTime, row) {
+    var recipe = recipeList[mealTime][row];
     var div = document.createElement("div");
     div.onclick = chooseRecipe;
-    div.dataset.rname = entry[0];
-    div.innerHTML = entry[0];
+    div.dataset.recipe = JSON.stringify([mealTime, row]);
+    div.innerHTML = recipe[0];
 
     var imgDiv = document.createElement("img");
-    imgDiv.src = entry[2];
+    imgDiv.src = recipe[10];
     imgDiv.height = 50;
     imgDiv.width = 50;
 
@@ -140,8 +162,8 @@ function makeRecipeDiv(entry) {
 }
 
 function showChoice(event) {
-    eventdiv = event.target
-    
+    eventdiv = event.target;
+
     var dlgDiv = document.getElementById("recipedialog");
     while (dlgDiv.firstChild) {
         dlgDiv.removeChild(dlgDiv.firstChild);
@@ -157,7 +179,7 @@ function showChoice(event) {
 
     var mealRecipe = recipeList[mealTime];
     for (var r=0; r<mealRecipe.length; r++) {
-        recipeDiv.appendChild(makeRecipeDiv(mealRecipe[r]));
+        recipeDiv.appendChild(makeRecipeDiv(mealTime, r));
     }
 
     dlgDiv.appendChild(recipeDiv);
@@ -166,25 +188,63 @@ function showChoice(event) {
 }
 
 function chooseRecipe(event) {
-    eventdiv.innerHTML = event.target.dataset.rname;
+    var choice = JSON.parse(event.target.dataset.recipe);
+    var mealList = recipeList[choice[0]];
+    var recipe = mealList[choice[1]];
+
+    var mealTime = eventdiv.id.split(":")[1];
+    var row = eventdiv.id.split(":")[2];
+    var mealDate = document.getElementById("DATE:" + row).innerHTML;
+    planList[mealTime + ":" + mealDate] = ["", mealTime, mealDate, recipe[0]];
+
+    eventdiv.innerHTML = makeMealHtml(recipe);
+    eventdiv.style.backgroundColor = "salmon";
     $("#recipedialog").dialog("close");
+}
+
+function makeMealHtml(recipe) {
+    var e = document.getElementById("menuinfo");
+    var idx = e.options[e.selectedIndex].value;
+    var idxType = e.options[e.selectedIndex].text;
+
+    var text = recipe[0] + '<span class="small-font">' + "[" + idxType + ":" + recipe[idx] + ']</span>';
+
+    return text;
 }
 
 function saveMenu(event) {
     var postData = [];
     $("div[id*='MEALCELL']").each(function() {
-        if (this.innerHTML != "--choose--") {
-            var typeRow = this.id.split(":");
-            var mealType = typeRow[1];
-            var mealRow = typeRow[2];
+	if (this.style.backgroundColor == "salmon") {
+            var mealTime = this.id.split(":")[1];
+            var mealRow = this.id.split(":")[2];
             var mealDate = document.getElementById("DATE:"+mealRow).innerHTML;
-            postData.push(["", mealType, mealDate, this.innerHTML]);
+            postData.push(planList[mealTime + ":" + mealDate]);
+	    this.style.backgroundColor = "#dbdfe5";
         }
     })
     
     var p = $.post("addplan", JSON.stringify(postData));
     p.done(function(data) { $("#planStatus").innerHTML = "saved"; });
 }
+
+//##########Save new recipe
+function addRecipe(event) {
+    var postData = [];
+    $("div[id*='MEALCELL']").each(function() {
+	if (this.style.backgroundColor == "salmon") {
+            var mealTime = this.id.split(":")[1];
+            var mealRow = this.id.split(":")[2];
+            var mealDate = document.getElementById("DATE:"+mealRow).innerHTML;
+            postData.push(planList[mealTime + ":" + mealDate]);
+	    this.style.backgroundColor = "#dbdfe5";
+        }
+    })
+    
+    var p = $.post("addplan", JSON.stringify(postData));
+    p.done(function(data) { $("#planStatus").innerHTML = "saved"; });
+}
+
 
 // Login implementation.
 // Frontend asks user for username and password. MD5 of password is generated
@@ -221,6 +281,36 @@ function login(event) {
     xhr.send(JSON.stringify({ "user": userName, "password": passWordMd5 }));
 }
 
+//###################################
+
+function newuser(event) {
+    var newuserName = document.getElementById("newemail").value
+    var newpassWord = document.getElementById("newpassword").value
+    var repeatPassword = document.getElementById("repeatpassword").value
+    
+    if(newpassWord != repeatPassword){
+      alert("passwords do not match");
+      return;
+      }
+
+    var xhr = new XMLHttpRequest();
+
+    function newuserResponse(){
+      if (xhr.status == 200) {
+        alert("User added successfuly welcome  " + newuserName );
+      }
+      else{
+        alert("User couldnot be added ");
+      }
+    }
+
+    xhr.open("POST", '/newuser', true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.addEventListener("load", newuserResponse);
+    xhr.send(JSON.stringify({ "user": newuserName, "password": newpassWord}));
+}
+
+//##############################################
 
 function logout(event) {
     function logoutResponse() {
