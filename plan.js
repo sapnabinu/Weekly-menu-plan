@@ -228,22 +228,42 @@ function saveMenu(event) {
     p.done(function(data) { $("#planStatus").innerHTML = "saved"; });
 }
 
-//##########Save new recipe
+//##########SAdd new recipe
 function addRecipe(event) {
-    var postData = [];
-    $("div[id*='MEALCELL']").each(function() {
-	if (this.style.backgroundColor == "salmon") {
-            var mealTime = this.id.split(":")[1];
-            var mealRow = this.id.split(":")[2];
-            var mealDate = document.getElementById("DATE:"+mealRow).innerHTML;
-            postData.push(planList[mealTime + ":" + mealDate]);
-	    this.style.backgroundColor = "#dbdfe5";
-        }
-    })
+  
+    var title = document.getElementById("title").value
+    var description = document.getElementById("des").value
+    var ingredients = document.getElementById("int").value
+    var directions = document.getElementById("dir").value
+    var time = document.getElementById("time").value
+    var facts = document.getElementById("nutrition").value
+    var quantity = document.getElementById("no").value
+    var calorie = document.getElementById("calorie").value
+    var cost = document.getElementById("cost").value
     
-    var p = $.post("addplan", JSON.stringify(postData));
-    p.done(function(data) { $("#planStatus").innerHTML = "saved"; });
-}
+    
+    if(title == "" || description =="" || ingredients == "" || directions == "" || time == "" || facts == "" || quantity == "" || calorie == "" || cost == ""){
+      alert("Recipe cannot be added,Add data in all fields");
+      return;
+      }
+
+    var xhr = new XMLHttpRequest();
+
+    function newRecipeResponse(){
+      if (xhr.status == 200){
+        alert("Recipe added successfuly");
+      }
+      else{
+        alert("Recipe could not be added ");
+      }
+    } 
+
+    xhr.open("POST", '/addrecipe', true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.addEventListener("load", newRecipeResponse);
+   
+    xhr.send(JSON.stringify({"title" : title,"desc" : description,"ing" :ingredients,"dir": directions,"time" : time,"nutrients" : facts,"quantity" : quantity,"cal" : calorie,"price" : cost}));                        
+   }
 
 
 // Login implementation.
@@ -332,4 +352,29 @@ function logout(event) {
     xhr.addEventListener("load", logoutResponse);
     xhr.open("POST", "/logout");
     xhr.send(JSON.stringify({}));
+}
+
+function kidsMealClick(event) {
+    var kidsmealdiv = document.getElementById("plancontainer");
+
+    function kidsMealResponse() {
+	if (xhr.status == 200) {
+	    kidsmealdiv.innerHTML = this.responseText;
+	} else {
+	    alert("/getkidsmeal failed");
+	}
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", kidsMealResponse);
+    xhr.open("GET", "/kidsmeal");
+    xhr.send();    
+}
+
+function hitext(event) {
+    event.target.style.color = "orange";
+}
+
+function lowtext(event) {
+    event.target.style.color = "black";
 }

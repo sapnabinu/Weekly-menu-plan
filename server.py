@@ -24,13 +24,15 @@ class S(BaseHTTPRequestHandler):
     getMap = { "/getrecipes" : "getRecipes",
                "/getplan" : "getPlan",
                "/login" : "login",
-               "/logout" : "logout" }
+               "/logout" : "logout",
+               "/kidsmeal" : "readSomethingFromDatabase"
+             }
 
     postMap = { "/addplan" : "addPlan",
                 "/login" : "login",
                 "/logout" : "logout", 
                 "/newuser" : "newuser",
-                "/addrecipe" : "addrecipe"}
+                "/addrecipe" : "addRecipe"}
 
     
     exemptedPaths = ["/homepage.html", "/login", "/newuser.html", "/newuser" ]
@@ -49,6 +51,11 @@ class S(BaseHTTPRequestHandler):
 
         return bool(mimetype)
 
+    def readSomethingFromDatabase(self):
+        something = mealDB.getKidsMeals()
+        self._set_headers("json")
+        self.wfile.write(json.dumps(something))        
+    
     def getRecipes(self):
         recipeList = {
             "BFST" : mealDB.getRecipe("BFST"),
@@ -118,10 +125,19 @@ class S(BaseHTTPRequestHandler):
         
         
     #ADD RECIPE    
-    def addrecipe(self, data):
-        for d in data:
-            pprint.pprint(d)
-        mealDB.addrecipe(data)
+    def addRecipe(self, data):
+        title = data["title"]
+        details = data["desc"]
+        ingredients= data["ing"]
+        directions = data["dir"]
+        time = data["time"]
+        facts=data["nutrients"]
+        quantity=data["quantity"]
+        calorie=data["cal"]
+        cost=data["price"]
+        
+        #NAME,MEAL_TIME,CALORIES,COST,RECIPE,TIME_TO_COOK,PREP_TIME,KIDS_MEAL,VEGAN_MEAL,LOW_CALORIE,IMAGE
+        mealDB.addRecipe([title,details,calorie,cost,directions,time,"","","","",""])
         self._set_headers("html")
         
         

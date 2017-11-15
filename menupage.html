@@ -1,145 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-	
-<head>
-  <title>Menu planner using Boot strap</title>
-  <meta char-set="utf-8">
-  <meta name="viewport" content="width-device-width,initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
   
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="plan.js"></script>
-
-  <!--Date -->	
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="plan.css">
-
-  <script>
-    window.onload = menuplanSetup;
-  </script> 
-	
-</head>
-
-<body>
-	
-	
-	<div class="w3-top w3-hide-small">
-  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-    <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
-    <a href="menupage.html" class="w3-bar-item w3-button activate">MENU PLANNER</a>
-    <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
-    <a href="homepage.html#login" class="w3-bar-item w3-button">SIGN IN</a>
-    
- </div>    
-</div>
-	
-	<br><br><br>
-  
-  
-<!--ul class="recipe-links">
-		<li><a href="http://dietzandwatson.com/recipe-categories/">Easy Meal Plan</a></li>
-		<li><a href="http://dietzandwatson.com/recipes/">Receipe Organizer</a></li>
-</ul-->
-  
-  
-  <div class="container">
-    <div id="recipedialog"></div>
-    <div class="row" style="background-color:lightgray;">&nbsp;</div>
-    <div class="row" style="background-color:lightgray;">
-
-    <div class="col-md-2"> <!-- more options column -->
-	<div class="dropdown">
-	  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-	    More Options
-	    <span class = "caret"></span>
-	  </button>
-
-	  <ul class = "dropdown-menu">
-	    <li><a href="easyplan.html" class="wsite-menu-subitem"><span class="wsite-menu-title">Easy meal plan</span></a></li>
+  <head>
+    <title>Menu planner using Boot strap</title>
+    <meta char-set="utf-8">
+      <meta name="viewport" content="width-device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
             
-	    <!--li><a href="menuhistory.html">Your presaved menu</a></li-->
-	    <li><a href="recipeorganizer.html">Recipe Organizer</a></li>
-	    
-	  </ul>
-	</div>
-      </div> <!-- end more options column -->
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                    
+                    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                    <script src="plan.js"></script>
+
+                    <!--Date -->        
+                    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+                      <link rel="stylesheet" href="plan.css">
+
+                        <script>
+                          window.onload = menuplanSetup;
+                        </script> 
+                        
+  </head>
+
+  <body>
+    <div class="transparent">
       
-    
-      	
-      <div class="col-md-2">
-	<label>Cook for:</label>
-	<input type="text" name="query" id="query" size="4" value="1" />
+      <div class="w3-top w3-hide-small">
+        <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+          <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
+          <a href="menupage.html" class="w3-bar-item w3-button activate">MENU PLAN</a>
+          <a href="recipeorganizer.html" class="w3-bar-item w3-button">ORGANIZER</a>
+          <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
+          <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
+          <a href="homepage.html#login" class="w3-bar-item w3-button">SIGN IN</a>
+          
+          <a class="btn btn-primary" href="reminder.html" role="button">Reminder</a>
+        </div>
       </div>
-
-      <div class="col-md-2">
-	    <select name="menuinfo" id="menuinfo">
-	      <option value="2">Calories</option>
-	      <option value="3">Cost</option>
-	      <option value="5">Time</option>
-	    </select>
-      </div> <!-- end menu info -->
-
-      <div class="col-md-4">
-	  <label for="spinner">No of Days:</label>
-	  <input size="2" value="7" id="spinner" name="value">
-      </div>
       
-       <div class="col-sm-1">
-	      <a class="btn btn-primary" href="reminder.html" role="button">Reminder</a>
-      </div>
+      <br/><br/><br/>
       
-     
-    </div> <!-- end top menu bar -->
+      <div class="container">
+        <div id="recipedialog"></div>
+        <div class="row" style="background-color:lightgray;">&nbsp;</div>
+        <div class="row" style="background-color:lightgray;">
+          
+          <div class="col-md-4"> <!-- more options column -->
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Easy Plan
+                <span class = "caret"></span>
+              </button>
 
-    <div class="row" style="background-color:lightgray;">&nbsp;</div>
-    <div class="row">&nbsp;</div>
+              <ul class = "dropdown-menu">
+                <li>Kids plan</li>
+                <li>Vegan plan</li>      
+                <li>Low Calorie Plan</li>
+              </ul>
+            </div>
+          </div> <!-- end more options column -->
+          
+          
+          <div class="col-md-2">
+            <label>Cook for:</label>
+            <input type="text" name="query" id="query" size="4" value="1" />
+          </div>
+          
+          
+          <div class="col-md-4">
+            <label for="spinner">Plan for </label>
+            <input size="2" value="7" id="spinner" name="value">
+              <label for="spinner">Days</label>
+          </div>
+          
 
-    <div style="background-color:#f5f5f5" id="plancontainer">
-      
-      <!-- meal plan table -->
-      <div class="row" id="planheader">
-	<div class="col-md-3">
-	  <p class="demo-content">Start Date<input type="text" id="datepicker"></p>
-	</div>
-	<div class="col-md-3">
-		<div class="demo-content"><h2 class="text-center"><a href="breakfast.html">Breakfast</a></h2></div>
-	</div>
-	<div class="col-md-3">
-		<div class="demo-content"><h2 class="text-center"><a href="lunch.html">Lunch</a></h2></div>
-	</div>
-	<div class="col-md-3">
-		<div class="demo-content"><h2 class="text-center"><a href="dinner.html">Dinner</a></h2></div>
-	</div>
-      </div>
-    </div>
-	  
-	  <div class="btn-group btn-group-justified">
-      <a class = "btn btn-primary btn-lg" onclick="saveMenu()" role = "button">Save my menu</a> 
-	<a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Generate List</a>
-	<a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Print my Menu plan</a>
-	<a class = "btn btn-primary btn-lg" href = "grocerylist.html" role = "button">Email my Menu plan</a>
-	 </div>	
-      
-      <div class="row">
-	  <a class = "btn btn-info" href = "https://www.amazon.com/AmazonFresh" role = "button">Online shopping</a>&nbsp &nbsp	
-	  <a class = "btn btn-info" href = "https://www.google.com/maps/search/grocery+shops" role = "button">Local stores near you</a>&nbsp &nbsp
-	  <a class = "btn btn-info" href = "https://www.google.com/maps/search/gym" role = "button">Local gym near you</a>&nbsp &nbsp
-     </div>
-      
-      	
-    </div> <!-- end meal plan table -->
+          <div class="col-md-2">
+            <select name="menuinfo" id="menuinfo">
+              <option value="2">Calories</option>
+              <option value="3">Cost</option>
+              <option value="5">Time</option>
+            </select>
+          </div> <!-- end menu info -->
 
-  </div> <!-- full page container -->
+          
+          
+          
+        </div> <!-- end top menu bar -->
 
+        <div class="row" style="background-color:lightgray;">&nbsp;</div>
+        <div class="row">&nbsp;</div>
+
+        <div style="background-color:#f5f5f5" id="plancontainer">
+          
+          <!-- meal plan table -->
+          <div class="row" id="planheader">
+            <div class="col-md-3">
+              <p class="demo-content">Start Date<input type="text" id="datepicker"></p>
+            </div>
+            <div class="col-md-3">
+              <div class="demo-content"><h2 class="text-center"><a href="breakfast.html">Breakfast</a></h2></div>
+            </div>
+            <div class="col-md-3">
+              <div class="demo-content"><h2 class="text-center"><a href="lunch.html">Lunch</a></h2></div>
+            </div>
+            <div class="col-md-3">
+              <div class="demo-content"><h2 class="text-center"><a href="dinner.html">Dinner</a></h2></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="btn-group btn-group-justified">
+          <a class = "btn btn-primary btn-lg" onclick="saveMenu()" role = "button">Save my menu</a> 
+          <a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Generate List</a>
+          <a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Print my Menu plan</a>
+          <a class = "btn btn-primary btn-lg" href = "grocerylist.html" role = "button">Email my Menu plan</a>
+        </div> 
+        
+        <div class="row">
+          <a class = "btn btn-info" href = "https://www.amazon.com/AmazonFresh" role = "button">Online shopping</a>&nbsp &nbsp  
+          <a class = "btn btn-info" href = "https://www.google.com/maps/search/grocery+shops" role = "button">Local stores near you</a>&nbsp &nbsp
+          <a class = "btn btn-info" href = "https://www.google.com/maps/search/gym" role = "button">Local gym near you</a>&nbsp &nbsp
+        </div>
+        
+        
+      </div> <!-- end meal plan table -->
+
+    </div> <!-- full page container -->
+</div>
 </body>
 </html>

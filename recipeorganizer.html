@@ -17,172 +17,77 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="plan.css">
+<script src="plan.js"></script>
   
 </head>
 <body>
-
+	
+	
   <!-- Navbar (sit on top) -->
   <div class="w3-top w3-hide-small">
-  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-    <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
-    <a href="menupage.html" class="w3-bar-item w3-button activate">MENU PLAN</a>
-	  <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
-    <a href="homepage.html#login" class="w3-bar-item w3-button">SIGN IN</a>
-        <label for="query"><span style="color:white; font-size: 15px;">Search
+    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+      <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
+      <a href="menupage.html" class="w3-bar-item w3-button">MENU PLAN</a>
+      <a href="recipeorganizer.html" class="w3-bar-item w3-button activate">ORGANIZER</a>
+      <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
+      <a href="homepage.html#login" class="w3-bar-item w3-button">SIGN IN</a>
+      <label for="query"><span style="color:white; font-size: 15px;">Search
           <input type="text" name="query" id="query" size="20" value="" />
-       </span> </label>
-  </div>    
-</div>
-    
-  <br><br> 
-
-      <p><h1> <span style="color:yellow; font-size: 70px;"> My <span style="color:white;">Recipe</span> Organizer! </span></h1></p>
+      </span> </label>
+      <a class="btn btn-primary" href="reminder.html" role="button">Reminder</a>
+    </div>    
+  </div>	
   
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="#kidsmeal">Kids Meal</a></p>
-      <p><a href="#lowcalorie">Low Calorie</a></p>
-      <p><a href="#">Fast Food</a></p>
-        <p><a href="#">Salads</a></p>
-      <p><a href="#">Snacks</a></p>
-      <p><a href="#">Fancy</a></p>
-    </div>
+  <br><br> 
+  
+  <p><h1> <span style="color:yellow; font-size: 70px;"> My <span style="color:white;">Recipe</span> Organizer! </span></h1></p>
+  
+  <div class="container-fluid text-center">    
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+	<p onclick="kidsMealClick()" onmouseover="hitext(event)" onmouseout="lowtext(event)">Kids Meal</p>
+	<p><a href="lowcaloriemeal.html">Low Calorie</a></p>
+	<p><a href="veganmeal.html">Vegan</a></p>
+  <p><a href="kidsmeal.html">Salads</a></p>
+	<p><a href="kidsmeal.html">Snacks</a></p>
+	<p><a href="kidsmeal.html">Fancy</a></p>
+      </div>
       <span style="color:white;">
-    <div class="col-sm-8 text-left"> 
-      <h1>Welcome</h1>
-      <p>Arrange your receipes....</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
-    </div>
-      </span>    
-    <div class="col-sm-2 sidenav">
-      <div class="well">
+	<div class="col-sm-8 text-left"> 
+
+	  <div style="background-color:#5f5f5f" id="plancontainer">
+	    <!-- plan table -->
+	    <!--
+	    <div class="row" id="planheader">
+	      <div class="col-md-2"></div>
+	      <div class="col-md-3">
+		<div class="demo-content"><h2 class="text-center"><a href="breakfast.html">Breakfast</a></h2></div>
+	      </div>
+	      <div class="col-md-3">
+		<div class="demo-content"><h2 class="text-center"><a href="lunch.html">Lunch</a></h2></div>
+	      </div>
+	      <div class="col-md-3">
+		<div class="demo-content"><h2 class="text-center"><a href="dinner.html">Dinner</a></h2></div>
+	      </div>
+            </div>
+	    -->
+	    data fetched from db 
+	  </div> 
+	</div>
+      </span>  
+      
+      <div class="col-sm-2 sidenav">
+	<div class="well">
           <h4><a href = "addrecipe.html" role = "button"><p>Add Recipe</p></a></h4>
           
+	</div>
+	<div class="well">
+          <p>ADS</p>
+	</div>
       </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
     </div>
   </div>
-</div>
-
-  
-  
-<footer class="container-fluid text-center">
-  
-    
-      <!-- All menu Page CONTENT! -->
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-  
-<hr id="kidsmeal"> 
-  <!-- First Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/kid-friendly-wide.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/kid-friendly-wide.jpg" alt="Steak" style="width:100%">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/kid-friendly-wide.jpg" alt="Cherries" style="width:100%">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/kid-friendly-wide.jpg" alt="Pasta and Wine" style="width:100%">
-      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-  </div>
-  
-   
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/vegetarian.jpg" alt="Popsicle" style="width:100%">
-      <h3>All I Need Is a Popsicle</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/vegetarian.jpg" alt="Salmon" style="width:100%">
-      <h3>Salmon For Your Skin</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/vegetarian.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/vegetarian.jpg" alt="Croissant" style="width:100%">
-      <h3>Le French</h3>
-      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-  </div>
-    
-  
-   <hr id="lowcalorie"> 
-   <!-- First Photo Grid for low calorie-->
-  <br><br>
-  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/quick-and-healthy-wide.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://www.awakentheabswithin.com/wp-content/uploads/2012/01/healthy-meal.jpg" alt="Steak" style="width:100%">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://www.awakentheabswithin.com/wp-content/uploads/2012/01/healthy-meal.jpg" alt="Cherries" style="width:100%">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://www.awakentheabswithin.com/wp-content/uploads/2012/01/healthy-meal.jpg" alt="Pasta and Wine" style="width:100%">
-      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-  </div>
-  
-   
-  <!-- Second Photo Grid for low calorie-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/quick-and-healthy-wide.jpg" alt="Popsicle" style="width:100%">
-      <h3>All I Need Is a Popsicle</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/quick-and-healthy-wide.jpg" alt="Salmon" style="width:100%">
-      <h3>Salmon For Your Skin</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/quick-and-healthy-wide.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="http://d3qrl2xm10iebd.cloudfront.net/img/style-guide/meal-plans/home-grid-test/vegetarian.jpg" alt="Croissant" style="width:100%">
-      <h3>Le French</h3>
-      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-  </div>
-  
-</footer>
 
 </body>
 </html>

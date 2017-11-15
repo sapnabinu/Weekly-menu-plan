@@ -83,11 +83,11 @@ class MealDB():
         self.cursor.execute(query, row)
         self.conn.commit()
 
-    def addRecipe(self, rows):
+    def addRecipe(self, row):
         query = """INSERT OR REPLACE INTO RECIPES (NAME,MEAL_TIME,CALORIES,COST,RECIPE,
            TIME_TO_COOK,PREP_TIME,KIDS_MEAL,VEGAN_MEAL,LOW_CALORIE,IMAGE)
            VALUES(?,?,?,?,?,?,?,?,?,?,?)"""
-        print self.cursor.executemany(query,rows)
+        print self.cursor.execute(query,row)
         self.conn.commit()
 
     def getRecipe(self,mealTime):
@@ -123,6 +123,13 @@ class MealDB():
         self.addRecipe(sampleData["recipes"])
         self.addUser(sampleData["users"])
         self.addIngredients(sampleData["ingredients"])
+        
+    def getKidsMeals(self):
+        query = "select * from recipes where kids_meal = 1"
+        self.cursor.execute(query)
+        r = self.cursor.fetchall()
+        print r
+        return r
 
 if __name__ == "__main__":
     m = MealDB()
