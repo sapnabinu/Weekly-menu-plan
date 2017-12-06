@@ -49,28 +49,23 @@
       
       <div class="container">
         <div id="recipedialog"></div>
+        <div id="inglistdialog"></div>
         <div class="row" style="background-color:lightgray;">&nbsp;</div>
         <div class="row" style="background-color:lightgray;">
           
-          <div class="col-md-4"> <!-- more options column -->
-            <div class="dropdown">
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                Easy Plan
-                <span class = "caret"></span>
-              </button>
 
-              <ul class = "dropdown-menu">
-                <li>Kids plan</li>
-                <li>Vegan plan</li>      
-                <li>Low Calorie Plan</li>
-              </ul>
-            </div>
-          </div> <!-- end more options column -->
-          
+          <div class="col-md-2"> <!-- Easy plan -->
+            <select name="typeofmeal" id="typeofmeal">  
+              <option value="Type of Meal">Type of Meal</option>
+              <option value="Low calorie">Low calorie</option>
+              <option value="Kids meal">Kids meal</option>
+              <option value="Vegan">Vegan</option>
+            </select>
+          </div> <!-- end Easy plan -->          
           
           <div class="col-md-2">
             <label>Cook for:</label>
-            <input type="text" name="query" id="query" size="4" value="1" />
+            <input type="text" name="peoplecount" id="peoplecount" size="4" value="1" />
           </div>
           
           
@@ -118,8 +113,8 @@
         
         <div class="btn-group btn-group-justified">
           <a class = "btn btn-primary btn-lg" onclick="saveMenu()" role = "button">Save my menu</a> 
-          <a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Generate List</a>
-          <a class = "btn btn-primary btn-lg" href = "grosslist.html" role = "button">Print my Menu plan</a>
+          <a class = "btn btn-primary btn-lg" id="showingredients" onclick="showingredients(event)" role = "button">Generate List</a>
+          <a class = "btn btn-primary btn-lg" id="printingeredients" onclick="showingredients(event)" role = "button">Print my Menu plan</a>
           <a class = "btn btn-primary btn-lg" href = "grocerylist.html" role = "button">Email my Menu plan</a>
         </div> 
         

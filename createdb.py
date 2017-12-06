@@ -12,6 +12,8 @@ class MealDB():
         self.createMealPlanTable()
         self.createRecipeTable()
         self.createUserTable()
+        self.createIngredientMapTable()
+        self.createIngredientsTable()
 
     def createMealPlanTable(self):
         query = """CREATE TABLE IF NOT EXISTS MEAL_PLAN (
@@ -52,12 +54,19 @@ class MealDB():
         self.cursor.execute(query)
         self.conn.commit()
 
+    def createIngredientMapTable(self):
+        query = """CREATE TABLE IF NOT EXISTS INGREDIENT_MAP (
+                INGREDIENT_ID INT,
+                INGREDIENT_NAME text,
+                UNIT text, PRIMARY KEY (INGREDIENT_ID, INGREDIENT_NAME))"""
+        self.cursor.execute(query)
+        self.conn.commit()
+
     def createIngredientsTable(self):
         query = """CREATE TABLE IF NOT EXISTS INGREDIENTS (
                 RECIPE_NAME text,
-                INGREDIENT text,
-                QUANTITY text,
-                UNIT text )"""
+                INGREDIENT_ID INT,
+                QUANTITY text, PRIMARY KEY (RECIPE_NAME, INGREDIENT_ID))"""
         self.cursor.execute(query)
         self.conn.commit()
         
@@ -104,25 +113,35 @@ class MealDB():
         print r
         return r[0][0]
 
-    def getIngredients(self,recipe):
-        query = """SELECT * from INGREDIENTS WHERE RECIPE_NAME = ?"""
+    def getIngredients(self,recipes):
+        query = """SELECT i.RECIPE_NAME, im.INGREDIENT_NAME, i.QUANTITY, im.UNIT
+                FROM INGREDIENT_MAP AS im JOIN INGREDIENTS AS i ON im.INGREDIENT_ID = i.INGREDIENT_ID
+                WHERE i.RECIPE_NAME IN ({})"""
+        query = query.format( ",".join(['"{}"'.format(r) for r in recipes]))
         self.cursor.execute(query)
         r = self.cursor.fetchall()
         print r
         return r
-
-    def addIngredients(self,rows):
+    
+    def addIngredientMap(self,rows):
+        query = """INSERT OR REPLACE INTO INGREDIENT_MAP (
+                INGREDIENT_ID, INGREDIENT_NAME, UNIT ) VALUES (?,?,?)"""
+        self.cursor.executemany(query, rows)
+        self.conn.commit()
+    
+    def addRecipeIngredients(self,rows):
         query = """INSERT OR REPLACE INTO INGREDIENTS (
-                RECIPE_NAME,INGREDIENT,QUANTITY,UNIT) VALUES (?,?,?,?)"""
+                RECIPE_NAME,INGREDIENT_ID,QUANTITY) VALUES (?,?,?)"""
         print "addIngredients:", query, rows
-        self.cursor.execute(query, rows)
+        self.cursor.executemany(query, rows)
         self.conn.commit()
 
     def populateSampleData(self):
         sampleData = json.load(open("recipelist.json"))
         self.addRecipe(sampleData["recipes"])
         self.addUser(sampleData["users"])
-        self.addIngredients(sampleData["ingredients"])
+        self.addIngredientMap(sampleData["ingredientmap"])
+        self.addRecipeIngredients(sampleData["ingredients"])
         
     def getKidsMeals(self):
         query = "select * from recipes where kids_meal = 1"

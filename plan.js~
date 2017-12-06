@@ -180,25 +180,16 @@ function startDateChange() {
 function makeRecipeDiv(mealTime, row) {
     var recipe = recipeList[mealTime][row];
     var div = document.createElement("div");
-
-    var textDiv = document.createElement("div");
-    textDiv.onclick = chooseRecipe;
-    textDiv.dataset.recipe = JSON.stringify([mealTime, row]);
-    textDiv.innerHTML = recipe[0];
-    textDiv.style.cssFloat = "left";
+    div.onclick = chooseRecipe;
+    div.dataset.recipe = JSON.stringify([mealTime, row]);
+    div.innerHTML = recipe[0];
 
     var imgDiv = document.createElement("img");
     imgDiv.src = recipe[10];
     imgDiv.height = 50;
     imgDiv.width = 50;
-    imgDiv.style.cssFloat = "right";
 
-    var clearDiv = document.createElement("div");
-    clearDiv.style.clear = "both";
-
-    div.appendChild(textDiv);
     div.appendChild(imgDiv);
-    div.appendChild(clearDiv);
     return div;
 }
 

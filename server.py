@@ -32,7 +32,8 @@ class S(BaseHTTPRequestHandler):
                 "/login" : "login",
                 "/logout" : "logout", 
                 "/newuser" : "newuser",
-                "/addrecipe" : "addRecipe"}
+                "/addrecipe" : "addRecipe",
+                "/getingredients" : "getIngredients" }
 
     
     exemptedPaths = ["/homepage.html", "/login", "/newuser.html", "/newuser" ]
@@ -176,8 +177,12 @@ class S(BaseHTTPRequestHandler):
         user = loginCookieMap.pop(cookie)
         self._set_headers("json")
         self.wfile.write(json.dumps({"user" : user}))
-        
-        
+
+    def getIngredients(self, data):
+        recipes = data
+        r = mealDB.getIngredients(data)
+        self._set_headers("json")
+        self.wfile.write(json.dumps(r))
 
     def checkAuth(self):
         cookieObject = Cookie.SimpleCookie(self.headers.get("Cookie"))
