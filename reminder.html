@@ -1,96 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-	
 
-<head>
+  <head>
+    
+    <title>Reminder!</title>
+    <meta char-set="utf-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 
-  
-	<title>Reminder!</title>
-	<meta char-set="utf-8">
-	<meta name="viewport" content="width-device-width,initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
-	 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plan.css">
     
-    
-    
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <!--Date -->	
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="plan.css">
-		
-<!--Date -->	
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-	<script>
-		<!--calender-->
-		  $( function() {	
-		  $( "#datepicker" ).datepicker();
-		   },'html');	  
-			  
-		  $( "#datepicker" ).datepicker({dateFormat:"yy/mm/dd"}).datepicker("setDate",new Date());
-		
-	</script>
-
-	
+    <script>
+      <!--calender-->
+      $( function() {	
+      $( "#datepicker" ).datepicker();
+      },'html');	  
+      
+      $( "#datepicker" ).datepicker({dateFormat:"yy/mm/dd"}).datepicker("setDate",new Date());
+      
+    </script>
     
-    
-    
-	
-	
-	
-<body>
-
-    
-    <!-- Navbar (sit on top) -->
-<div class="w3-top w3-hide-small">
-  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-    <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
-    <a href="menupage.html" class="w3-bar-item w3-button">MENU PLAN</a>
-	<a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
-  </div>
-</div>
-    
-    <br><br>
-	
-	 
-  <!-- Reminder -->
-  
-   
-		  <h1> <span style="color:yellow; font-size: 40px;">Remind Me</span></h1>
-	
-	
-	<form action="/action_page.php" target="_blank">
-          
-          <p><div class="demo-content" onclick="function()">Choose the date :<input type="text" size="12" id="datepicker"></div></p>
+    <body>
+      
+      <!-- Navbar (sit on top) -->
+      <div class="w3-top w3-hide-small">
+        <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+          <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
+          <a href="menupage.html" class="w3-bar-item w3-button">MENU PLAN</a>
+	  <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
+          <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
+        </div>
+      </div>
+      
+      <br><br>
+      
+      
+      <!-- Reminder -->
+      
+      
+      <h1> <span style="color:yellow; font-size: 40px;">Remind Me</span></h1>
+      
+      
+      <form action="/action_page.php" target="_blank">
+        
+        <p><div class="demo-content" onclick="function()">Choose the date :<input type="text" size="12" id="datepicker"></div></p>
 
 	<div class="well">
-            <a  target="_blank"style="width:30px;height:30px;"><p class="ex1">
-				
-				Message :	
-				  Time to plan next menu
-				
-               </p> </a>
-            </div>
+          <a  target="_blank"style="width:30px;height:30px;"><p class="ex1">
+	      
+	      Message :	
+	      Time to plan next menu
+	      
+          </p> </a>
+        </div>
 	
-         
-			 <div class="well">    
-   <a href="http://www.gmail.com" target="_blank"><img src="https://vignette.wikia.nocookie.net/gtawiki/images/5/5e/Gmail-logo.png/revision/latest?cb=20170830153000" style="width:30px;height:30px;"> <p class="ex1">  Mail</p></a>
-       </div>		
+        
+	<div class="well">    
+          <a href="http://calendar.google.com" target="_blank"><img src="https://lh3.ggpht.com/oGR9I1X9No3SfFEXrq655tETtVVzI3jIphhmEVPGPEVuM5gfwh8lOGWHQFf6gjSTvw=w300" style="width:50px;height:50px;"> <p class="ex1">Remind Me</p></a>
+        </div>		
 	
-         </form>
-      </div>
+      </form>
 </div>
-	
+</div>
+
 
 
 </body>

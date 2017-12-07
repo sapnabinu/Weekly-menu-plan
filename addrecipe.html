@@ -1,82 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Existing user login</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Menu History</title>
-<link rel="stylesheet" href="plan.css">	
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+  <head>
+    <title>Existing user login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu History</title>
+    <link rel="stylesheet" href="plan.css">	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="plan.css">
- <script src="plan.js"></script>
- <script src="md5.js"></script>
-</head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plan.css">
+    <script src="plan.js"></script>
+    <script src="md5.js"></script>
+  </head>
   
-<body>
+  <body>
 
-   <!-- Navbar (sit on top) -->
-   <div class="w3-top w3-hide-small">
-  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-    <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
-    <a href="menupage.html" class="w3-bar-item w3-button">MENU PLAN</a>
-	  <a href="recipeorganizer.html" class="w3-bar-item w3-button activate">ORGANIZER</a>
-	  <a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
-    <a href="homepage.html#login" class="w3-bar-item w3-button">SIGN IN</a>
-       
-	  <a class="btn btn-primary" href="reminder.html" role="button">Reminder</a>
-  </div>    
-</div>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top w3-hide-small">
+      <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+        <a href="homepage.html" class="w3-bar-item w3-button">HOME</a>
+        <a href="menupage.html" class="w3-bar-item w3-button">MENU PLAN</a>
+	<a href="recipeorganizer.html" class="w3-bar-item w3-button activate">ORGANIZER</a>
+	<a href="homepage.html#about" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="homepage.html#contact" class="w3-bar-item w3-button">CONTACT</a>
+      </div>    
+    </div>
     <br><br>
-    
-  
-<div class="container">
-  <h1> <span style="color:yellow; font-size: 40px;"> Add Recipe Page</span></h1>
-  
-    <div style="background-color:#f5f5f5" id="addrecipiecontainer">
-      
-     
         
+    <div class="container">
+      <h1> <span style="color:yellow; font-size: 40px;"> Add Recipe Page</span></h1>
+
+      <div class="row" style="background-color:#f5f5f5" id="addrecipiecontainer">
+
+        <div class="col-md-6"> <!-- first column start -->
+          <div class="row">
+            <label class="leftlabel"> Recipe Title :</label>
+            <input class="rightinput" type="text" id="title" placeholder="Enter title" required ></input>
+          </div>
+          
+          <div class="row">
+	    <label class="leftlabel">Ingredients:</label>
+            <input class="rightinput" type="int" id="int" placeholder="Enter Ingredients" required ></input>
+          </div>
+          
+          <div class="row">
+	    <label class="leftlabel">Directions:</label>
+            <input class="rightinput" type="dir" id="dir" placeholder="Enter direction" required ></input>
+          </div>
+          
+          <div class="row">
+            <label class="leftlabel">Prep Time</label>
+            <input class="rightinput" type="text" name="time" id="time" placeholder="Enter prep time" required ></input>
+          </div>
+          
+          <div class="row">
+            <label class="leftlabel">Nutritional Facts</label>
+            <input class="rightinput" type="text" name="nutrition" id="nutrition" placeholder="Enter Nutrition facts" required ></input>
+          </div>
+          
+          <div class="row">
+            <label class="leftlabel">No of Servings</label>
+            <input class="rightinput" type="text" name="no" id="no" placeholder="Quantity" required ></input>
+          </div>
+          
+          <div class="row">
+            <label class="leftlabel">Calorie</label>
+            <input class="rightinput" type="text" name="calorie" id="calorie" placeholder="Calories" required ></input>
+          </div>
+          
+          <div class="row">
+            <label class="leftlabel">Cost</label>
+            <input class="rightinput" type="text" name="cost" id="cost" placeholder="cost" required ></input>
+          </div>
+        </div> <!-- first column end -->
+
+        <div class="col-md-6"> <!-- second column -->
+          <div class="row">
+            <label class="margin1">Description:</label>
+          </div>
+          <div class="row">
+            <textarea class="margin1 description" id="des" placeholder="Enter description" required></textarea>
+          </div>
+        </div>  <!-- second column end -->
+      </div>
+      <br><br>
+          
+      <div class="row" >
+        <div class="col-md-2"></div>
+        <div class="col-md-3"><button class="w3-button w3-block w3-black" id="clearaddrecipe" onclick="clearAddRecipe()" style="font-size:20px">Clear</button></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3"><button type="SAVE" class="w3-button w3-block w3-black" id="save" onclick="addRecipe()" style="font-size:20px">Save</button></div>
+        <div class="col-md-2"></div>
+      </div>
       
-  
+      <br><br>
+
+    </div>  
     
-     <div><label> Recipe Title :</label><input type="text" id="title" placeholder="Enter title" required style="font-size:20px"></div>
-    
-    <div><label>Description:</label><input type="text" id="des" placeholder="Enter description" required style="font-size:20px"></div>
-	  
-	  <div><label>Ingredients:</label><input type="int" id="int" placeholder="Enter Ingredients" required style="font-size:20px"></div>
-      
-	  <div><label>Directions:</label><input type="dir" id="dir" placeholder="Enter direction" required style="font-size:20px"></div>
-     
-	<!--div><label>Directions:</label><input type="dir" class="w3-input w3-border" id="dir" placeholder="Enter direction" required style="font-size:20px">
-    </div-->
-     
-              
-	  
-      <div><label>Prep Time</label><input type="text" name="time" id="time" placeholder="Enter prep time" required style="font-size:20px"></div>
-      
-      <div><label>Nutritional Facts</label><input type="text" name="nutrition" id="nutrition" placeholder="Enter Nutrition facts" required style="font-size:20px"></div>
-      
-      <div><label>No of Serving</label><input type="text" name="no" id="no" placeholder="Quantity" required style="font-size:20px"></div>
-      
-      <div><label>Calorie</label><input type="text" name="calorie" id="calorie" placeholder="Calories" required style="font-size:20px"></div>
-      
-      <div><label>Cost</label><input type="text" name="cost" id="cost" placeholder="cost" required style="font-size:20px"></div>
-       <br><br>
-      
-       <button type="SAVE" class="w3-button w3-block w3-black" id="save" onclick="addRecipe()" style="font-size:20px">Save</button>
-     <br><br>
-    <!--p class="center larger"><strong><a href="#">Want to change your recipe?</a></strong>      |      <strong><a href="newuser_signup.html">Delete your recipe?</a></p-->
-</div>
-  </div>  
-  
-</body>
+  </body>
 </html>

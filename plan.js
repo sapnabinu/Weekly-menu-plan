@@ -13,16 +13,7 @@ Date.prototype.addDays = function(days) {
   return dat;
 }
 
-function menuplanSetup() {
-    document.getElementById("menuinfo").onchange=startDateChange;
-    document.getElementById("typeofmeal").onchange=startDateChange;
-    $("#datepicker").datepicker({ onSelect: startDateChange } );
-    $("#datepicker").datepicker("setDate", "0");
-    
-    spinWidget = $( "#spinner" ).spinner({ min: 3,
-                                           max: 10,
-                                           stop: function(event, ui) { generateRows();}
-                                         });
+function loadRecipeList() {
     function assignRecipeList () {
         recipeList = JSON.parse(this.responseText);
         var entry;
@@ -37,9 +28,37 @@ function menuplanSetup() {
     xhr.addEventListener("load", assignRecipeList);
     xhr.open("GET", "/getrecipes");
     xhr.send();
-    generateRows();
-};
+}
 
+function menuplanSetup() {
+    document.getElementById("menuinfo").onchange=startDateChange;
+    document.getElementById("typeofmeal").onchange=startDateChange;
+    $("#datepicker").datepicker({ onSelect: startDateChange } );
+    $("#datepicker").datepicker("setDate", "0");
+    
+    spinWidget = $( "#spinner" ).spinner({ min: 3,
+                                           max: 10,
+                                           stop: function(event, ui) { generateRows();}
+                                         });
+    loadRecipeList();
+    generateRows();
+}
+
+var recipeImage = function(cell, formatterParams) {
+    return "<img src=\"" + cell.getValue() + "\" class=\"thumb\" height=\"50\" width=\"50\">";
+}
+        
+function recipeTableSetup() {
+    $("#recipetable").tabulator({
+    height:"400px",
+    columns:[
+        {title:"Recipe Name", field:"name"},
+        {title:"Meal Type", field:"mealtype"},
+        {title:"Image", field:"rcpimg", align:"center", formatter:recipeImage},
+    ],
+    });
+    loadRecipeList();
+}
 
 function chooseMeal(mealType, typeofmeal) {
     var meals = recipeList[mealType];
@@ -538,20 +557,18 @@ function showingredients(event) {
 }
 
 function kidsMealClick(event) {
-    var kidsmealdiv = document.getElementById("plancontainer");
+    var kidsmealdiv = document.getElementById("recipetable");
+    $("#recipetable").tabulator("clearData");
 
-    function kidsMealResponse() {
-        if (xhr.status == 200) {
-            kidsmealdiv.innerHTML = this.responseText;
-        } else {
-            alert("/getkidsmeal failed");
-        }
-    }
-
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", kidsMealResponse);
-    xhr.open("GET", "/kidsmeal");
-    xhr.send();    
+    var i = 0;
+    Object.keys(recipeList).forEach(function(lstName, ri) {
+        recipeList[lstName].forEach(function(recipe, i) {
+            if (recipe[7] == 1) {
+                i += 1;
+                $("#recipetable").tabulator("addRow", { id:i, name:recipe[0], mealtype:recipe[1], rcpimg:recipe[10]});
+            }
+        });
+    });
 }
 
 function hitext(event) {
@@ -560,4 +577,17 @@ function hitext(event) {
 
 function lowtext(event) {
     event.target.style.color = "black";
+}
+
+function clearPassword(event) {
+    document.getElementById("newemail").value = '';
+    document.getElementById("newpassword").value = '';
+    document.getElementById("repeatpassword").value = '';
+}
+
+function clearAddRecipe(event) {
+    $("input[class*='rightinput']").each(function() {
+        this.value = '';
+    })
+    document.getElementById("des").value = '';    
 }
